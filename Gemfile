@@ -17,9 +17,13 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'semantic-ui-sass'
 
+gem 'figaro'
+gem 'omniauth-google-oauth2'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -33,6 +37,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'capybara'
+  gem 'simplecov'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

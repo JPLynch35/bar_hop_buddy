@@ -5,10 +5,11 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <link href='https://fonts.googleapis.com/css?family=Roboto'
     <%= javascript_include_tag 'application' %>
+    <link href='https://fonts.googleapis.com/css?family=Roboto'/>
+    <%= favicon_link_tag asset_path('favicon-clock'), :rel => 'icon', :type =>  'image/png' %>
     <% if current_page?(root_path) %>
-      <meta http-equiv="refresh" content="3;url=http://localhost:3000/deals" />
+      <meta http-equiv="refresh" content="3;url=http://localhost:3000/auth/google_oauth2" />
     <% end %>
   </head>
 
@@ -18,7 +19,7 @@
         <div class="five wide column fitted item">
           <span class="left-pad nav-app-name">BarH</span>
           <div class="nav-image">
-            <%= image_tag "five-oclock-white", height: "18px", width: "18px"%>
+            <%= image_tag "five-oclock-white", height: "16px", width: "16px"%>
           </div>
             <span class="nav-app-name">pBuddy</span>
         </div>
