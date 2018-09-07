@@ -5,8 +5,9 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <link href='https://fonts.googleapis.com/css?family=Roboto'
     <%= javascript_include_tag 'application' %>
+    <link href='https://fonts.googleapis.com/css?family=Roboto'/>
+    <%= favicon_link_tag asset_path('favicon-clock'), :rel => 'icon', :type =>  'image/png' %>
     <% if current_page?(root_path) %>
       <meta http-equiv="refresh" content="3;url=http://localhost:3000/deals" />
     <% end %>
