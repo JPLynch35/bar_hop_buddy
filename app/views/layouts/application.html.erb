@@ -27,7 +27,7 @@
           <button class="ui button">Find Your Bars</button>
         </div>
         <div class="five wide column right item flex-row-r">
-          <button class="ui button logout">Log Out</button>
+          <%= button_to 'Log Out', logout_path, class: "ui button logout", method: :delete %>
         </div>
       </nav>
     <% end %>
