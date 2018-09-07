@@ -6,6 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <% if current_page?(root_path) %>
+      <meta http-equiv="refresh" content="3;url=http://localhost:3000/deals" />
+    <% end %>
   </head>
 
   <body>
