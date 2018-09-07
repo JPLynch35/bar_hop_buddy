@@ -8,12 +8,5 @@ describe 'a visitor' do
       expect(page).to have_content('BarH')
       expect(page).to have_content('pBuddy')
     end
-    it 'is redirected to the deals page after 2 seconds' do
-      visit root_path
-
-      sleep(4.0)
-
-      expect(current_path).to eq(deals_path)
-    end
   end
 end
