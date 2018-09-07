@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link href='https://fonts.googleapis.com/css?family=Roboto'
     <%= javascript_include_tag 'application' %>
     <% if current_page?(root_path) %>
       <meta http-equiv="refresh" content="3;url=http://localhost:3000/deals" />
@@ -12,6 +13,23 @@
   </head>
 
   <body>
+    <% unless current_page?(root_path) %>
+      <nav class="ui borderless menu grid">
+        <div class="five wide column fitted item">
+          <span class="left-pad nav-app-name">BarH</span>
+          <div class="nav-image">
+            <%= image_tag "five-oclock-white", height: "18px", width: "18px"%>
+          </div>
+            <span class="nav-app-name">pBuddy</span>
+        </div>
+        <div class="six wide column item flex-row-center">
+          <button class="ui button">Find Your Bars</button>
+        </div>
+        <div class="five wide column right item flex-row-r">
+          <button class="ui button logout">Log Out</button>
+        </div>
+      </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>
