@@ -1,0 +1,23 @@
+<div class="flex-row-center">
+    <button class="ui button robo-thin", onclick="getLocation()">
+        Calculate Location
+    </button>
+</div>
+<div class="flex-row-center">
+    <p class="robo-thin", id="location_display"></p>
+</div>
+
+<script>
+    var x = document.getElementById("location_display");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude;
+    }
+</script>
