@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 
   resources :deals, only: [:index]
+  resource :map, only: [:show], controller: 'map'
 
   namespace :api do
     namespace :v1 do

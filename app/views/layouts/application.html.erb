@@ -23,9 +23,15 @@
           </div>
             <span class="nav-app-name">pBuddy</span>
         </div>
-        <div class="six wide column item flex-row-center">
-          <button class="ui button">Find Your Bars</button>
-        </div>
+        <% if current_page?(deals_path) %>
+          <div class="six wide column item flex-row-center">
+            <%= button_to 'Find Your Bars', map_path, class: "ui button", method: :get %>
+          </div>
+        <% elsif current_page?(map_path) %>
+          <div class="six wide column item flex-row-center">
+            <%= button_to 'Find More Bars', deals_path, class: "ui button", method: :get %>
+          </div>
+        <% end %>
         <div class="five wide column right item flex-row-r">
           <%= button_to 'Log Out', logout_path, class: "ui button logout", method: :delete %>
         </div>
