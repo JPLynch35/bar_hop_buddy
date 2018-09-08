@@ -17,10 +17,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'semantic-ui-sass'
 
+gem 'faraday'
 gem 'figaro'
 gem 'omniauth-google-oauth2'
-
-gem 'geocoder'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
