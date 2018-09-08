@@ -34,7 +34,6 @@
   }
  
   .splash-app-name { 
-    font-family: Roboto;
     color: white;
     display: flex;
     flex-direction: row;
@@ -46,12 +45,9 @@
     margin-top: 0px;
   }
 
-  .title-size {
+  .title {
     font-size: 80px;
-  }
-
-  .shift-down {
-    margin-top: 5px;
+    font-family: Roboto;
   }
  
   .left-pad { 
@@ -82,7 +78,7 @@
   }
 
   .nav-image {
-    margin-top: 5px;
+    margin-top: 7px;
   }
 
   .ui.button {
