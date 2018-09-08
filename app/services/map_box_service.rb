@@ -1,11 +1,11 @@
-class MapService
+class MapBoxService
   def initialize(long, lat)
     @long = long
     @lat = lat
   end
 
   def call_current_address
-    @map ||= get_json("/geocoding/v5/mapbox.places/#{long},#{lat}.json?types=address&access_token=pk.eyJ1IjoianBseW5jaDM1IiwiYSI6ImNqbHIyczB1NjAwbDczcXMzN3Vra2RsNGwifQ.-BxRMCzfhhmbT8lA-qYqcQ")
+    @location ||= get_json("/geocoding/v5/mapbox.places/#{long},#{lat}.json?types=address&access_token=pk.eyJ1IjoianBseW5jaDM1IiwiYSI6ImNqbHIyczB1NjAwbDczcXMzN3Vra2RsNGwifQ.-BxRMCzfhhmbT8lA-qYqcQ")
   end
 
   def converted_address

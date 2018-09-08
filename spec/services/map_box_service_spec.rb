@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-describe MapService do
+describe MapBoxService do
   it 'exists' do
     long = -104.8772123
     lat = 39.7529201
-    service = MapService.new(long, lat)
+    service = MapBoxService.new(long, lat)
 
-    expect(service).to be_a(MapService)
+    expect(service).to be_a(MapBoxService)
   end
 
   describe 'instance methods' do
@@ -19,7 +19,7 @@ describe MapService do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
       long = -104.8772123
       lat = 39.7529201
-      @service = MapService.new(long, lat)
+      @service = MapBoxService.new(long, lat)
     end
     it 'calls api and retrieves current address hash' do
       expect(@service.call_current_address).to be_a(Hash)
