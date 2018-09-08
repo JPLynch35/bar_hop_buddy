@@ -4,18 +4,18 @@
     </button>
 </div>
 <div class="flex-row-center">
-    <p class="robo-thin"><%= current_location %></p>
+    <p class="robo-thin", id="location"><%= current_user.last_location unless current_user.last_location.nil? %></p>
 </div>
 
 <script>
-var x = document.getElementById("location_display");
-
 function getLocation() {
     navigator.geolocation.getCurrentPosition(postPosition);
 }
 
 function postPosition(position) {
     $.post('/location',{long:position.coords.longitude, lat:position.coords.latitude});
-    window.location.reload();
+    window.setTimeout(function(){
+        location.reload();
+    }, 1000);
 }
 </script>

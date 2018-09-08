@@ -3,7 +3,7 @@ class LocationController < ApplicationController
     long = params[:long]
     lat = params[:lat]
     presenter = DealsPresenter.new(long, lat)
-    session[:current_location] = presenter.current_address
+    current_user.update_attribute(:last_location, presenter.current_address)
     redirect_to deals_path
   end
 end

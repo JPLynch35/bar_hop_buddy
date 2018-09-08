@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    current_user.update_attribute(:last_location, nil)
     reset_session
     redirect_to root_path
   end
