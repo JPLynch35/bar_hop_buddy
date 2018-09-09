@@ -6,11 +6,4 @@ Rails.application.routes.draw do
 
   resources :deals, only: [:index]
   resource :map, only: [:show], controller: 'map'
-
-  namespace :api do
-    namespace :v1 do
-      
-    end
-  end
-
 end

@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 20180907155135) do
   create_table "users", force: :cascade do |t|
     t.string "uid"
     t.string "email"
-    t.string "last_location"
     t.string "token"
+    t.string "last_location"
+    t.string "last_long"
+    t.string "last_lat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

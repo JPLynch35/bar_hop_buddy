@@ -4,6 +4,8 @@
     <title>BarHopBuddy</title>
     <%= csrf_meta_tags %>
 
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href='https://fonts.googleapis.com/css?family=Roboto'/>
@@ -25,7 +27,7 @@
         </div>
         <% if current_page?(deals_path) %>
           <div class="six wide column item flex-row-center">
-            <%= button_to 'Find Your Bars', map_path, class: "ui button", method: :get %>
+            <%= button_to 'Find Your Bars', map_path, params: {lat: current_user.last_lat, long: current_user.last_long}, class: "ui button", method: :get %>
           </div>
         <% elsif current_page?(map_path) %>
           <div class="six wide column item flex-row-center">

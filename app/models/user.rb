@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  validates_presence_of :uid, :email, :token
+  validates :uid, uniqueness: true
+  validates :email, uniqueness: true
+  validates :token, uniqueness: true
 
   def self.from_omniauth(auth)
     where(uid: auth.uid).first_or_initialize.tap do |user|

@@ -16,6 +16,6 @@ function postPosition(position) {
     $.post('/location',{long:position.coords.longitude, lat:position.coords.latitude});
     window.setTimeout(function(){
         location.reload();
-    }, 1000);
+    }, 800);
 }
 </script>

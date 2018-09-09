@@ -5,7 +5,7 @@ class MapBoxService
   end
 
   def call_current_address
-    @location ||= get_json("/geocoding/v5/mapbox.places/#{long},#{lat}.json?types=address&access_token=pk.eyJ1IjoianBseW5jaDM1IiwiYSI6ImNqbHIyczB1NjAwbDczcXMzN3Vra2RsNGwifQ.-BxRMCzfhhmbT8lA-qYqcQ")
+    @location ||= get_json("/geocoding/v5/mapbox.places/#{long},#{lat}.json?types=address&access_token=#{ENV['MAPBOX_PK']}")
   end
 
   def converted_address
@@ -18,6 +18,10 @@ class MapBoxService
   private
   attr_reader :long, :lat
   
+  def get_png(url)
+    conn.get(url).body
+  end
+
   def get_json(url)
     JSON.parse(conn.get(url).body, symbolize_names: true)
   end
