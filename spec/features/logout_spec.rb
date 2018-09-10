@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'a logged in user' do
   describe 'visiting the deals page' do
     it 'can log out' do
-      user = User.new(
+      user = User.create(
         uid: '239487234023434',
         email: 'Bob@gmail.com',
         token: 'hsdf873rjbhsdf'

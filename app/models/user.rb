@@ -2,6 +2,8 @@ class User < ApplicationRecord
   validates :uid, uniqueness: true
   validates :email, uniqueness: true
   validates :token, uniqueness: true
+  has_many :user_bars
+  has_many :bars, through: :user_bars
 
   def self.from_omniauth(auth)
     where(uid: auth.uid).first_or_initialize.tap do |user|
