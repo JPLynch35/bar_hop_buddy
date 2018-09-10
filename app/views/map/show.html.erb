@@ -1,0 +1,21 @@
+<main class="flex-row-center">
+  <div id="map"></div>
+</main>
+
+<script>
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+  mapboxgl.accessToken = "pk.eyJ1IjoianBseW5jaDM1IiwiYSI6ImNqbHIyczB1NjAwbDczcXMzN3Vra2RsNGwifQ.-BxRMCzfhhmbT8lA-qYqcQ";
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/jplynch35/cjlva7ol02cgc2rp4xttj72jd",
+    center: [getUrlVars()["long"], getUrlVars()["lat"]],
+    zoom: 14.0
+  });
+</script>

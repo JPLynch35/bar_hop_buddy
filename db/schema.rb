@@ -10,15 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180907155135) do
+ActiveRecord::Schema.define(version: 20180910020907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bars", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.text "open"
+    t.text "close"
+    t.text "hh_start"
+    t.text "hh_end"
+    t.text "message"
+    t.text "deals"
+    t.string "id_key"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_bars", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "bar_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bar_id"], name: "index_user_bars_on_bar_id"
+    t.index ["user_id"], name: "index_user_bars_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "uid"
     t.string "email"
     t.string "token"
+    t.string "last_location"
+    t.string "last_long"
+    t.string "last_lat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

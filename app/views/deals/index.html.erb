@@ -4,20 +4,18 @@
     </button>
 </div>
 <div class="flex-row-center">
-    <p class="robo-thin", id="location_display"></p>
+    <p class="robo-thin", id="location"><%= current_user.last_location unless current_user.last_location.nil? %></p>
 </div>
 
 <script>
-    var x = document.getElementById("location_display");
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else { 
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude + 
-        "<br>Longitude: " + position.coords.longitude;
-    }
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(postPosition);
+}
+
+function postPosition(position) {
+    $.post('/location',{long:position.coords.longitude, lat:position.coords.latitude});
+    window.setTimeout(function(){
+        location.reload();
+    }, 800);
+}
 </script>
