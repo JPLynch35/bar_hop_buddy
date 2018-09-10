@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20180910020907) do
   create_table "bars", force: :cascade do |t|
     t.string "name"
     t.string "address"
+    t.string "longitude"
+    t.string "latitude"
     t.text "open"
     t.text "close"
     t.text "hh_start"
