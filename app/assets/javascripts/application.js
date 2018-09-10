@@ -8,10 +8,9 @@
 // compiled file. JavaScript code in this file should be added after the last require_* statement.
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
 //
-// Loads all Semantic javascripts
-//= require semantic-ui
+// about supported directives.
 //= require jquery3
 //= require jquery_ujs
+//= require semantic-ui
 //= require_tree .

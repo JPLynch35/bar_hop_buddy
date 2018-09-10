@@ -8,6 +8,8 @@
 Bar.create(
   name: 'Brothers Bar',
   address: '1920 Market Street, Denver, CO',
+  longitude: '-104.994192',
+  latitude: '39.753057',
   open: { Sunday: '8am', Monday: '10am', Tuesday: '10am', Wednesday: '10am', Thursday: '10am', Friday: '10am', Saturday: '8am' },
   close: { Sunday: '10pm', Monday: '12am', Tuesday: '12am', Wednesday: '12am', Thursday: '12am', Friday: '2am', Saturday: '2am' },
   hh_start: { Sunday: '8am', Monday: '4pm', Tuesday: '4pm', Wednesday: '4pm', Thursday: '4pm', Friday: '4pm', Saturday: '4pm' },
@@ -19,6 +21,8 @@ Bar.create(
 Bar.create(
   name: '1UP',
   address: '1925 Blake Street, Denver, CO',
+  longitude: '-104.994983',
+  latitude: '39.753782',
   open: { Sunday: '8am', Monday: '10am', Tuesday: '10am', Wednesday: '10am', Thursday: '10am', Friday: '10am', Saturday: '8am' },
   close: { Sunday: '10pm', Monday: '12am', Tuesday: '12am', Wednesday: '12am', Thursday: '12am', Friday: '2am', Saturday: '2am' },
   hh_start: { Sunday: '8am', Monday: '4pm', Tuesday: '4pm', Wednesday: '4pm', Thursday: '4pm', Friday: '4pm', Saturday: '4pm' },

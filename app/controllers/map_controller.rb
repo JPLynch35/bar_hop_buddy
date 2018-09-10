@@ -1,22 +1,25 @@
 class MapController < ApplicationController
   def show
-    fav_bars = UserBars.where(user_id: current_user.id)
+    fav_bars = current_user.bars
     @geo_json = Array.new
     fav_bars.each do |bar|
       @geo_json << {
         type: 'Feature',
         geometry: {
           type: 'Point',
-          coordinates: [bar.longitude, happy_hour.latitude]
+          coordinates: [bar.longitude, bar.latitude]
         },
         properties: {
-          name: happy_hour.name,
-          address: happy_hour.street,
-          :'marker-color' => '#00607d',
-          :'marker-symbol' => 'circle',
-          :'marker-size' => 'medium'
+          name: bar.name,
+          address: bar.address,
+          "marker-symbol": 'marker'
         }
       }
+    end
+    
+    respond_to do |format|
+      format.html
+      format.json {render json: @geo_json}
     end
   end
 end
