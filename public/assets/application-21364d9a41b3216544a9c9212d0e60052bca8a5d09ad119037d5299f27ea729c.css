@@ -43162,3 +43162,14 @@ h1 {
   font-family: Roboto;
   font-weight: 100;
 }
+
+/* line 108, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#location {
+  margin-top: 10px;
+}
+
+/* line 112, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#map {
+  width: 1000px;
+  height: 600px;
+}
