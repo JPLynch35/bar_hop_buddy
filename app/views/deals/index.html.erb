@@ -9,13 +9,16 @@
 
 <script>
 function getLocation() {
-    navigator.geolocation.getCurrentPosition(postPosition);
-}
-
-function postPosition(position) {
+navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
+navigator.geolocation.getCurrentPosition(function (position) {
     $.post('/location',{long:position.coords.longitude, lat:position.coords.latitude});
     window.setTimeout(function(){
         location.reload();
-    }, 800);
+    }, 200);
+}, function (e) {
+    alert('Please enable the location feature in your browser.');
+}, {
+    enableHighAccuracy: true
+});
 }
 </script>
