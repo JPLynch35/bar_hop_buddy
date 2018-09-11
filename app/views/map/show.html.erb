@@ -3,55 +3,48 @@
 </main>
 
 <script>
-  function getUrlVars() {
-      var vars = {};
-      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-          vars[key] = value;
-      });
-      return vars;
-  }
-
-  mapboxgl.accessToken = "pk.eyJ1IjoianBseW5jaDM1IiwiYSI6ImNqbHIyczB1NjAwbDczcXMzN3Vra2RsNGwifQ.-BxRMCzfhhmbT8lA-qYqcQ";
-  const map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/jplynch35/cjlva7ol02cgc2rp4xttj72jd",
-    center: [getUrlVars()["long"], getUrlVars()["lat"]],
-    zoom: 14.0
-  });
-  map.on('load', function () {
-    map.addSource("user location", {
-			"type": "geojson",
-			"data": {
-				"type": "FeatureCollection",
-				"features": [{
-					"type": "Feature",
-					"geometry": {
-						"type": "Point",
-						"coordinates": [getUrlVars()["long"], getUrlVars()["lat"]]
-					},
-					"properties": {
-						"title": "Your Location",
-						"marker-symbol": "marker",
-
+	$.ajax({
+		dataType: "text",
+		url: "map.json",
+		success: function(data) {
+			var geo_json = $.parseJSON(data);
+			mapboxgl.accessToken = "pk.eyJ1IjoianBseW5jaDM1IiwiYSI6ImNqbHIyczB1NjAwbDczcXMzN3Vra2RsNGwifQ.-BxRMCzfhhmbT8lA-qYqcQ";
+			const map = new mapboxgl.Map({
+				container: "map",
+				style: "mapbox://styles/jplynch35/cjlva7ol02cgc2rp4xttj72jd",
+				center: [geo_json[0], geo_json[1]],
+				zoom: 14.0
+			});
+			map.on('load', function () {
+				map.addSource("user location", {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+							"type": "Feature",
+							"geometry": {
+								"type": "Point",
+								"coordinates": [geo_json[0], geo_json[1]]
+							},
+							"properties": {
+								"title": "Your Location",
+								"marker-symbol": "marker",
+							}
+						}]
 					}
-				}]
-			}
-    });
-      map.addLayer({
-      "id": "user",
-      "type": "symbol",
-      "source": "user location",
-      "layout": {
-				"icon-image": "circle-11",
-				"icon-size": 2,
-				"icon-allow-overlap": true
-      }
-    });
-		$.ajax({
-			dataType: "text",
-			url: "map.json",
-			success: function(data) {
-				var geo_json = $.parseJSON(data);
+				});
+				map.addLayer({
+					"id": "user",
+					"type": "symbol",
+					"source": "user location",
+					"layout": {
+						"icon-image": "circle-11",
+						"icon-size": 2,
+						"icon-allow-overlap": true
+					}
+				});
+				geo_json.shift();
+				geo_json.shift();
 				map.addSource("bar locations", {
 					"type": "geojson",
 					"data": {
@@ -69,7 +62,7 @@
 						"icon-allow-overlap": true
 					}
 				});
-			}
-		});
+			});
+		}
   });
 </script>

@@ -4,21 +4,73 @@
     </button>
 </div>
 <div class="flex-row-center">
-    <p class="robo-thin", id="location"><%= current_user.last_location unless current_user.last_location.nil? %></p>
+    <p class="robo-thin", id="location"></p>
 </div>
+<main class="flex-row-center">
+	<div class="bar-card">
+		<p class="robo-thin flex-row-center", id="dc-name"></p>
+		<p class="robo-thin flex-row-center", id="dc-address"></p>
+		<p class="robo-thin flex-row-center", id="dc-hours"></p>
+		<p class="robo-thin flex-row-center", id="dc-hh_hours"></p>
+		<p class="robo-thin flex-row-center", id="dc-message"></p>
+		<p class="robo-thin flex-row-center", id="dc-deals"></p>
+		<button class="ui button robo-thin flex-row-center", id="like">
+        Hell Yes!
+    </button>
+		<button class="ui button robo-thin flex-row-center", id="dislike">
+        Hell No!
+    </button>
+	</div>
+</main>
 
 <script>
-function getLocation() {
-navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
-navigator.geolocation.getCurrentPosition(function (position) {
-    $.post('/location',{long:position.coords.longitude, lat:position.coords.latitude});
-    window.setTimeout(function(){
-        location.reload();
-    }, 200);
-}, function (e) {
-    alert('Please enable the location feature in your browser.');
-}, {
-    enableHighAccuracy: true
-});
-}
+	function getLocation() {
+		navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
+		navigator.geolocation.getCurrentPosition(function (position) {
+				$.post("/location",{long:position.coords.longitude, lat:position.coords.latitude})
+		}, function (e) {
+				alert("Please enable the location feature in your browser.");
+		}, {
+			enableHighAccuracy: true
+		});
+		$.ajax({
+			dataType: "text",
+			url: "location.json",
+			success: function(data) {
+				var address = $.parseJSON(data);
+				document.getElementById('location').innerHTML = address.location;
+			}
+		});
+		function dayName() {
+			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+			var d = new Date();
+			return days[d.getDay()];
+		};
+		let nearby_bars;
+		$.ajax({
+			dataType: "text",
+			url: "deals.json",
+			success: function(data) {
+				nearby_bars = $.parseJSON(data);
+				cardFlip(nearby_bars);
+			}
+		});
+		function cardFlip(nearby_bars) {
+			$("#dc-name").html(nearby_bars[0].name);
+			$("#dc-address").html(nearby_bars[0].address);
+			$("#dc-hours").html(nearby_bars[0].open[dayName()] + " - " + nearby_bars[0].close[dayName()]);
+			$("#dc-hh_hours").html(nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
+			$("#dc-message").html(nearby_bars[0].message);
+			$("#dc-deals").html(nearby_bars[0].deals);
+		};
+		$("#like").click(function() {
+			$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
+			nearby_bars.shift();
+			cardFlip(nearby_bars);
+		});
+		$("#dislike").click(function() {
+			nearby_bars.shift();
+			cardFlip(nearby_bars);
+		});
+	};
 </script>

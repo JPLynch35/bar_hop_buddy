@@ -1,4 +1,13 @@
 class LocationController < ApplicationController
+  def show
+    address = {
+      location: current_user.last_location
+    }
+    respond_to do |format|
+      format.json { render json: address }
+    end
+  end
+
   def create
     long = params[:long]
     lat = params[:lat]
