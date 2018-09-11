@@ -13,7 +13,12 @@
 		<p class="robo-thin flex-row-center", id="dc-hours"></p>
 		<p class="robo-thin flex-row-center", id="dc-hh_hours"></p>
 		<p class="robo-thin flex-row-center", id="dc-message"></p>
-		<p class="robo-thin flex-row-center", id="dc-deals"></p>
+		<pclass="robo-thin flex-row-center">Happy Hour Deals:</p>
+		<p class="robo-thin flex-row-center", id="dc-deals1"></p>
+		<p class="robo-thin flex-row-center", id="dc-deals2"></p>
+		<p class="robo-thin flex-row-center", id="dc-deals3"></p>
+		<p class="robo-thin flex-row-center", id="dc-deals4"></p>
+		<p class="robo-thin flex-row-center", id="dc-deals5"></p>
 		<button class="ui button robo-thin flex-row-center", id="like">
         Hell Yes!
     </button>
@@ -58,10 +63,15 @@
 		function cardFlip(nearby_bars) {
 			$("#dc-name").html(nearby_bars[0].name);
 			$("#dc-address").html(nearby_bars[0].address);
-			$("#dc-hours").html(nearby_bars[0].open[dayName()] + " - " + nearby_bars[0].close[dayName()]);
-			$("#dc-hh_hours").html(nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
+			$("#dc-hours").html("Hours: " + nearby_bars[0].open[dayName()] + " - " + nearby_bars[0].close[dayName()]);
+			$("#dc-hh_hours").html("Happy Hour: " + nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
 			$("#dc-message").html(nearby_bars[0].message);
-			$("#dc-deals").html(nearby_bars[0].deals);
+			var deals = $.parseJSON(nearby_bars[0].deals)
+			$("#dc-deals1").html(deals[0]);
+			$("#dc-deals2").html(deals[1]);
+			$("#dc-deals3").html(deals[2]);
+			$("#dc-deals4").html(deals[3]);
+			$("#dc-deals5").html(deals[4]);
 		};
 		$("#like").click(function() {
 			$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
