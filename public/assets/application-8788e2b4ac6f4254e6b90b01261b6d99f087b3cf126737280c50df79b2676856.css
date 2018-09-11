@@ -43164,11 +43164,22 @@ h1 {
 }
 
 /* line 108, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.bar-card {
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #455e7a;
+  margin-top: 10px;
+}
+
+/* line 118, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #location {
   margin-top: 10px;
 }
 
-/* line 112, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 122, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #map {
   width: 1000px;
   height: 600px;
