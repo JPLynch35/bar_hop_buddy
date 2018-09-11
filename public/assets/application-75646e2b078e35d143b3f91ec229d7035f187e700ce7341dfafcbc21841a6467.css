@@ -43067,10 +43067,9 @@ body, html {
 /* line 24, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 h1 {
   display: inline;
-  font-size: 50px;
 }
 
-/* line 29, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 28, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .bg {
   background-image: url("table-beers.jpg");
   height: 100%;
@@ -43079,7 +43078,7 @@ h1 {
   background-size: cover;
 }
 
-/* line 37, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 36, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .splash-app-name {
   color: white;
   display: flex;
@@ -43088,85 +43087,96 @@ h1 {
   padding-top: 40px;
 }
 
-/* line 45, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 44, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .reset-margin {
   margin-top: 0px;
 }
 
-/* line 49, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 48, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .title {
   font-size: 80px;
-  font-family: rubik;
+  font-family: Rubik;
 }
 
-/* line 54, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 53, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .left-pad {
   padding-left: 16px;
 }
 
-/* line 58, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 57, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .flex-row-r {
   display: flex;
   flex-direction: row-reverse;
 }
 
-/* line 63, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 62, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .flex-col {
   display: flex;
   flex-direction: column;
   align-self: center;
 }
 
-/* line 69, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 68, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .flex-row-center {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-/* line 75, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 74, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .nav-app-name {
-  font-family: rubik;
+  font-family: Rubik;
   color: white;
   font-size: 30px;
 }
 
-/* line 81, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 80, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .nav-image {
-  margin-top: 7px;
+  margin-top: 5px;
 }
 
-/* line 85, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 84, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.button {
   background-color: white;
   color: black;
-  font-family: rubik;
+  font-family: Rubik;
   font-weight: 100;
 }
 
-/* line 92, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 91, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.ui.button.deals {
+  background-color: #455e7a;
+  color: white;
+  font-family: Rubik;
+  font-weight: 100;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+
+/* line 102, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.button.logout {
   background-color: white;
   color: black;
-  font-family: rubik;
+  font-family: Rubik;
   font-weight: 100;
 }
 
-/* line 99, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 109, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.menu {
   background-color: #687c92;
 }
 
-/* line 103, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 113, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .rubik-thin {
-  font-family: rubik;
+  font-family: Rubik;
   font-weight: 100;
 }
 
-/* line 108, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 118, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .bar-card {
-  width: 400px;
-  height: 600px;
+  width: 350px;
+  height: 450px;
   background-color: white;
   border-style: solid;
   border-width: 1px;
@@ -43174,12 +43184,38 @@ h1 {
   margin-top: 10px;
 }
 
-/* line 118, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
-#location {
-  margin-top: 10px;
+/* line 128, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#dc-name {
+  margin-top: 25px;
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-size: 24px;
 }
 
-/* line 122, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 135, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#dc-address, #dc-hours, #dc-hh_hours, #dc-message {
+  line-height: 5px;
+}
+
+/* line 139, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#dc-deals1 {
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+/* line 144, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#dc-deals2, #dc-deals3, #dc-deals4, #dc-deals5 {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* line 149, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#location {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* line 154, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #map {
   width: 1000px;
   height: 600px;
