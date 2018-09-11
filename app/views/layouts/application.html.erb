@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Rubik'/>
-    <%= favicon_link_tag asset_path('favicon-clock'), :rel => 'icon', :type =>  'image/png' %>
+    <%= favicon_link_tag asset_path("favicon-clock.png"), :rel => 'icon', :type =>  'image/png' %>
     <% if current_page?(root_path) %>
       <meta http-equiv="refresh" content="3;url=https://barhopbuddy.herokuapp.com/auth/google_oauth2" />
     <% end %>
