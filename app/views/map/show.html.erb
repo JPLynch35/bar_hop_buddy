@@ -38,12 +38,13 @@
 					"type": "symbol",
 					"source": "user location",
 					"layout": {
-						"icon-image": "a.circle-11",
+						"icon-image": "circle-11",
 						"icon-size": 2,
 						"icon-allow-overlap": true
 					}
 				});
-				geo_json.shift(2);
+				geo_json.shift();
+				geo_json.shift();
 				map.addSource("bar locations", {
 					"type": "geojson",
 					"data": {
@@ -56,7 +57,7 @@
 					"type": "symbol",
 					"source": "bar locations",
 					"layout": {
-						"icon-image": "a.marker-15",
+						"icon-image": "marker-15",
 						"icon-size": 1,
 						"icon-allow-overlap": true
 					}

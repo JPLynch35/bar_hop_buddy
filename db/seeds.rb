@@ -53,8 +53,8 @@
 
 NAMES = ['Brothers Bar', "1UP", 'Oscar Blues', 'Fiction Brewery', 'Freshcraft', 'Thirsty Lion']
 ADDRESS = ['1920 Market Street, Denver, CO', '1925 Blake Street, Denver, CO', '1624 Market Street, Denver, CO', '7101 East Colfax Avenue, Denver, CO', '1530 Blake Street, Denver, CO', '1605 Wynkoop Street, Denver, CO']
-LONGITUDE = ['-104.994192', '-104.994983', '-104.997508', '-104.905731', '-104.999540', '-105.012380']
-LATITUDE = ['39.753057', '39.753782', '39.750111', '39.740381', '39.749920', '39.745880']
+LONGITUDE = ['-104.994192', '-104.994983', '-104.997508', '-104.905731', '-104.999540', '-105.0007']
+LATITUDE = ['39.753057', '39.753782', '39.750111', '39.740381', '39.749920', '39.752753']
 OPEN = { Sunday: '8am', Monday: '10am', Tuesday: '10am', Wednesday: '10am', Thursday: '10am', Friday: '10am', Saturday: '8am' }
 CLOSE = { Sunday: '10pm', Monday: '12am', Tuesday: '12am', Wednesday: '12am', Thursday: '12am', Friday: '2am', Saturday: '2am' }
 HHSTART = { Sunday: '8am', Monday: '4pm', Tuesday: '4pm', Wednesday: '4pm', Thursday: '4pm', Friday: '4pm', Saturday: '4pm' }
