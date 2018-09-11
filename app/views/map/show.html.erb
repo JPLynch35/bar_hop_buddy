@@ -43,7 +43,8 @@
 						"icon-allow-overlap": true
 					}
 				});
-				geo_json.shift(2);
+				geo_json.shift();
+				geo_json.shift();
 				map.addSource("bar locations", {
 					"type": "geojson",
 					"data": {

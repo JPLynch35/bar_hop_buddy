@@ -1,6 +1,6 @@
 class DealsController < ApplicationController
   def index
-    bars = Bar.all
+    bars = Bar.all.order('random()')
     @nearby_bars = bars.map do |bar|
       bar if distance_between(current_user.last_lat.to_f, current_user.last_long.to_f, bar.latitude.to_f, bar.longitude.to_f) < 5280
     end.compact
@@ -11,6 +11,7 @@ class DealsController < ApplicationController
   end
 
   private
+  
   def distance_between(lat1, lon1, lat2, lon2)
     rad_per_deg = Math::PI / 180
     rm = 6371000

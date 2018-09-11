@@ -22,7 +22,6 @@
  
   h1 { 
     display: inline;
-    font-size: 50px;
   }
  
   .bg { 
@@ -47,7 +46,7 @@
 
   .title {
     font-size: 80px;
-    font-family: Roboto;
+    font-family: Rubik;
   }
  
   .left-pad { 
@@ -72,26 +71,37 @@
   }
 
   .nav-app-name {
-    font-family: Roboto;
+    font-family: Rubik;
     color: white;
     font-size: 30px;
   }
 
   .nav-image {
-    margin-top: 7px;
+    margin-top: 5px;
   }
 
   .ui.button {
     background-color: white;
     color: black;
-    font-family: Roboto;
+    font-family: Rubik;
     font-weight: 100;
+  }
+
+  .ui.button.deals {
+    background-color: #455e7a;
+    color: white;
+    font-family: Rubik;
+    font-weight: 100;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 40px;
+
   }
 
   .ui.button.logout {
     background-color: white;
     color: black;
-    font-family: Roboto;
+    font-family: Rubik;
     font-weight: 100;
   }
 
@@ -99,23 +109,45 @@
     background-color: #687c92
   }
 
-  .robo-thin {
-    font-family: Roboto;
+  .rubik-thin {
+    font-family: Rubik;
     font-weight: 100;
   }
 
   .bar-card {
-    width: 400px;
-    height: 600px;
+    width: 350px;
+    height: 450px;
     background-color: white;
     border-style: solid;
     border-width: 1px;
     border-color: #455e7a;
     margin-top: 10px;
   }
-  
+
+  #dc-name {
+    margin-top: 25px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  #dc-address, #dc-hours, #dc-hh_hours, #dc-message {
+    line-height: 5px;
+  }
+
+  #dc-deals1 {
+    margin-top: 40px;
+    font-weight: bold;
+  }
+
+  #dc-deals2, #dc-deals3, #dc-deals4, #dc-deals5 {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
   #location {
     margin-top: 10px;
+    font-style: italic;
   }
 
   #map {

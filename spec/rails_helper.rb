@@ -15,7 +15,7 @@ require 'rspec/rails'
 
 def stub_omni_auth
   OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
+  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
     'provider' => 'google_oauth2',
     'uid' => 83726423,
     'info' => {'email' => 'Billy3241@gmail.com'},
