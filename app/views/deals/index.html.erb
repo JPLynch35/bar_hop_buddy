@@ -4,27 +4,28 @@
     </button>
 </div>
 <div class="flex-row-center">
-    <p class="rubik-thin", id="location"></p>
+    <p class="rubik-thin", id="location"><br></p>
 </div>
 <main class="flex-row-center">
 	<div class="bar-card">
-		<p class="rubik-thin flex-row-center", id="dc-name"></p>
-		<p class="rubik-thin flex-row-center", id="dc-address"></p>
-		<p class="rubik-thin flex-row-center", id="dc-hours"></p>
-		<p class="rubik-thin flex-row-center", id="dc-hh_hours"></p>
-		<p class="rubik-thin flex-row-center", id="dc-message"></p>
-		<p class="rubik-thin flex-row-center">Happy Hour Deals:</p>
-		<p class="rubik-thin flex-row-center", id="dc-deals1"></p>
-		<p class="rubik-thin flex-row-center", id="dc-deals2"></p>
-		<p class="rubik-thin flex-row-center", id="dc-deals3"></p>
-		<p class="rubik-thin flex-row-center", id="dc-deals4"></p>
-		<p class="rubik-thin flex-row-center", id="dc-deals5"></p>
-		<button class="ui button rubik-thin flex-row-center", id="like">
-        Hell Yes!
-    </button>
-		<button class="ui button rubik-thin flex-row-center", id="dislike">
-        Hell No!
-    </button>
+		<p class="rubik-thin flex-row-center", id="dc-name"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-address"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-hours"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-hh_hours"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-message"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals1"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals2"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals3"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals4"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals5"><br></p>
+		<div class="flex-row-center">
+			<button class="ui button deals rubik-thin", id="like">
+				Hell Yes!
+			</button>
+			<button class="ui button deals rubik-thin", id="dislike">
+				Hell No!
+			</button>
+		</div>
 	</div>
 </main>
 
@@ -42,7 +43,6 @@
 					url: "location.json",
 					success: function(data) {
 						var address = $.parseJSON(data);
-						debugger;
 						document.getElementById('location').innerHTML = address.location;
 					}
 				});
