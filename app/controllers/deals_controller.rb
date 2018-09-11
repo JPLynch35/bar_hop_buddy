@@ -11,6 +11,7 @@ class DealsController < ApplicationController
   end
 
   private
+  
   def distance_between(lat1, lon1, lat2, lon2)
     rad_per_deg = Math::PI / 180
     rm = 6371000

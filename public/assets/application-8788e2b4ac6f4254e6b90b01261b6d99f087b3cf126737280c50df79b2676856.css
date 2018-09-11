@@ -43096,7 +43096,7 @@ h1 {
 /* line 49, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .title {
   font-size: 80px;
-  font-family: Roboto;
+  font-family: rubik;
 }
 
 /* line 54, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
@@ -43126,7 +43126,7 @@ h1 {
 
 /* line 75, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .nav-app-name {
-  font-family: Roboto;
+  font-family: rubik;
   color: white;
   font-size: 30px;
 }
@@ -43140,7 +43140,7 @@ h1 {
 .ui.button {
   background-color: white;
   color: black;
-  font-family: Roboto;
+  font-family: rubik;
   font-weight: 100;
 }
 
@@ -43148,7 +43148,7 @@ h1 {
 .ui.button.logout {
   background-color: white;
   color: black;
-  font-family: Roboto;
+  font-family: rubik;
   font-weight: 100;
 }
 
@@ -43158,8 +43158,8 @@ h1 {
 }
 
 /* line 103, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
-.robo-thin {
-  font-family: Roboto;
+.rubik-thin {
+  font-family: rubik;
   font-weight: 100;
 }
 
