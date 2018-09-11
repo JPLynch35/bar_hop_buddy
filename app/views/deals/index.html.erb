@@ -62,13 +62,14 @@
 			$("#dc-hh_hours").html(nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
 			$("#dc-message").html(nearby_bars[0].message);
 			$("#dc-deals").html(nearby_bars[0].deals);
-			nearby_bars.shift();
 		};
 		$("#like").click(function() {
 			$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
+			nearby_bars.shift();
 			cardFlip(nearby_bars);
 		});
 		$("#dislike").click(function() {
+			nearby_bars.shift();
 			cardFlip(nearby_bars);
 		});
 	};

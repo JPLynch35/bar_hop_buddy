@@ -1,6 +1,6 @@
 class UserBarController < ApplicationController
   def create
-    current_user.user_bars.create(user_id: user_bar_params[:bar_id])
+    current_user.user_bars.create(bar_id: user_bar_params[:bar_id])
     redirect_to deals_path
   end
 
