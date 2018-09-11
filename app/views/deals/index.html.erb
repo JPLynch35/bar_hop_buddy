@@ -4,21 +4,38 @@
     </button>
 </div>
 <div class="flex-row-center">
-    <p class="robo-thin", id="location"><%= current_user.last_location unless current_user.last_location.nil? %></p>
+    <p class="robo-thin", id="location"></p>
 </div>
+<main class="flex-row-center">
+	<div class="deal-card">
+
+	</div>
+</main>
 
 <script>
-function getLocation() {
-navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
-navigator.geolocation.getCurrentPosition(function (position) {
-    $.post('/location',{long:position.coords.longitude, lat:position.coords.latitude});
-    window.setTimeout(function(){
-        location.reload();
-    }, 200);
-}, function (e) {
-    alert('Please enable the location feature in your browser.');
-}, {
-    enableHighAccuracy: true
-});
-}
+	function getLocation() {
+		navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
+		navigator.geolocation.getCurrentPosition(function (position) {
+				$.post("/location",{long:position.coords.longitude, lat:position.coords.latitude})
+		}, function (e) {
+				alert("Please enable the location feature in your browser.");
+		}, {
+			enableHighAccuracy: true
+		});
+		$.ajax({
+			dataType: "text",
+			url: "location.json",
+			success: function(data) {
+				var address = $.parseJSON(data);
+				document.getElementById('location').innerHTML = address.location;
+			}
+		});
+		$.ajax({
+			dataType: "text",
+			url: "deals.json",
+			success: function(data) {
+				var nearby_bars = $.parseJSON(data);
+			}
+		});
+	};
 </script>

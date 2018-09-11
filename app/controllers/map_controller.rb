@@ -1,9 +1,8 @@
 class MapController < ApplicationController
   def show
     fav_bars = current_user.bars
-    @geo_json = Array.new
-    fav_bars.each do |bar|
-      @geo_json << {
+    @geo_json = fav_bars.map do |bar|
+      {
         type: 'Feature',
         geometry: {
           type: 'Point',
