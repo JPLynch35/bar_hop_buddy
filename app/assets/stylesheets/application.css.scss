@@ -86,7 +86,14 @@
     font-family: Rubik;
     font-weight: 100;
   }
-
+  
+  .ui.button.logout {
+    background-color: white;
+    color: black;
+    font-family: Rubik;
+    font-weight: 100;
+  }
+  
   .ui.button.deals {
     background-color: #455e7a;
     color: white;
@@ -94,17 +101,10 @@
     font-weight: 100;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 40px;
+    margin-top: 50px;
 
   }
-
-  .ui.button.logout {
-    background-color: white;
-    color: black;
-    font-family: Rubik;
-    font-weight: 100;
-  }
-
+  
   .ui.menu {
     background-color: #687c92
   }
@@ -116,12 +116,13 @@
 
   .bar-card {
     width: 350px;
-    height: 450px;
+    height: 475px;
     background-color: white;
     border-style: solid;
     border-width: 1px;
     border-color: #455e7a;
     margin-top: 10px;
+    border-radius: 10px;
   }
 
   #dc-name {
