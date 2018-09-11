@@ -7,8 +7,19 @@
     <p class="robo-thin", id="location"></p>
 </div>
 <main class="flex-row-center">
-	<div class="deal-card">
-
+	<div class="bar-card">
+		<p class="robo-thin flex-row-center", id="dc-name"></p>
+		<p class="robo-thin flex-row-center", id="dc-address"></p>
+		<p class="robo-thin flex-row-center", id="dc-hours"></p>
+		<p class="robo-thin flex-row-center", id="dc-hh_hours"></p>
+		<p class="robo-thin flex-row-center", id="dc-message"></p>
+		<p class="robo-thin flex-row-center", id="dc-deals"></p>
+		<button class="ui button robo-thin flex-row-center", id="like">
+        Hell Yes!
+    </button>
+		<button class="ui button robo-thin flex-row-center", id="dislike">
+        Hell No!
+    </button>
 	</div>
 </main>
 
@@ -30,12 +41,35 @@
 				document.getElementById('location').innerHTML = address.location;
 			}
 		});
+		function dayName() {
+			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+			var d = new Date();
+			return days[d.getDay()];
+		};
+		let nearby_bars;
 		$.ajax({
 			dataType: "text",
 			url: "deals.json",
 			success: function(data) {
-				var nearby_bars = $.parseJSON(data);
+				nearby_bars = $.parseJSON(data);
+				cardFlip(nearby_bars);
 			}
+		});
+		function cardFlip(nearby_bars) {
+			$("#dc-name").html(nearby_bars[0].name);
+			$("#dc-address").html(nearby_bars[0].address);
+			$("#dc-hours").html(nearby_bars[0].open[dayName()] + " - " + nearby_bars[0].close[dayName()]);
+			$("#dc-hh_hours").html(nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
+			$("#dc-message").html(nearby_bars[0].message);
+			$("#dc-deals").html(nearby_bars[0].deals);
+			nearby_bars.shift();
+		};
+		$("#like").click(function() {
+			$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
+			cardFlip(nearby_bars);
+		});
+		$("#dislike").click(function() {
+			cardFlip(nearby_bars);
 		});
 	};
 </script>
