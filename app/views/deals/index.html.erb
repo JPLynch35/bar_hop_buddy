@@ -30,21 +30,33 @@
 
 <script>
 	function getLocation() {
-		navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
 		navigator.geolocation.getCurrentPosition(function (position) {
-				$.post("/location",{long:position.coords.longitude, lat:position.coords.latitude})
+				$.ajax({
+					type: 'POST',
+					url: "/location",
+					data: {long:position.coords.longitude, lat:position.coords.latitude},
+					async:false
+				});
+				$.ajax({
+					dataType: "text",
+					url: "location.json",
+					success: function(data) {
+						var address = $.parseJSON(data);
+						document.getElementById('location').innerHTML = address.location;
+					}
+				});
+				$.ajax({
+					dataType: "text",
+					url: "deals.json",
+					success: function(data) {
+						nearby_bars = $.parseJSON(data);
+						cardFlip(nearby_bars);
+					}
+				});
 		}, function (e) {
 				alert("Please enable the location feature in your browser.");
 		}, {
 			enableHighAccuracy: true
-		});
-		$.ajax({
-			dataType: "text",
-			url: "location.json",
-			success: function(data) {
-				var address = $.parseJSON(data);
-				document.getElementById('location').innerHTML = address.location;
-			}
 		});
 		function dayName() {
 			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -52,14 +64,6 @@
 			return days[d.getDay()];
 		};
 		let nearby_bars;
-		$.ajax({
-			dataType: "text",
-			url: "deals.json",
-			success: function(data) {
-				nearby_bars = $.parseJSON(data);
-				cardFlip(nearby_bars);
-			}
-		});
 		function cardFlip(nearby_bars) {
 			$("#dc-name").html(nearby_bars[0].name);
 			$("#dc-address").html(nearby_bars[0].address);
