@@ -1,6 +1,8 @@
 <div class="flex-row-center">
-	<%= image_tag "location", height: "45px", width: "45px" %>
-	<p class="rubik-thin", id="location"><br></p>
+	<%= image_tag "location", height: "40px", width: "40px", id: "location-image" %>
+	<p class="rubik-thin", id="location-text">
+		<%= image_tag "load-bar" %>
+	</p>
 </div>
 <main class="flex-row-center">
 	<div class="bar-card">
@@ -14,40 +16,47 @@
 		<p class="rubik-thin flex-row-center", id="dc-deals3"><br></p>
 		<p class="rubik-thin flex-row-center", id="dc-deals4"><br></p>
 		<p class="rubik-thin flex-row-center", id="dc-deals5"><br></p>
+		<div class="flex-row-center", id="horizontal-line"></div>
 		<div class="flex-row-center">
-			<%= image_tag "negative", height: "100px", width: "100px", class: "card-buttons", id: "dislike"%>
-			<%= image_tag "positive", height: "100px", width: "100px", class: "card-buttons", id: "like"%>
+			<div class="click-box", id="dislike">
+				<input type="image" src="assets/negative.svg", height="100px", width="100px", class="card-buttons" />
+			</div>
+			<div id="vertical-line"></div>
+			<div class="click-box", id="like">
+				<input type="image" src="assets/positive.svg", height="100px", width="100px", class="card-buttons" />
+			</div>
 		</div>
 	</div>
 </main>
 
 <script>
+	$("#location-image").hide();
 	window.onload = getLocation();
 	function getLocation() {
 		navigator.geolocation.getCurrentPosition(function (position) {
-				$.ajax({
-					type: 'POST',
-					url: "/location",
-					data: {long:position.coords.longitude, lat:position.coords.latitude},
-					async:false,
-				});
-				$.ajax({
-					dataType: "text",
-					url: "location.json",
-					success: function(data) {
-						var address = $.parseJSON(data);
-						document.getElementById('location').innerHTML = address.location;
-						debugger;
-					}
-				});
-				$.ajax({
-					dataType: "text",
-					url: "deals.json",
-					success: function(data) {
-						nearby_bars = $.parseJSON(data);
-						cardFlip(nearby_bars);
-					}
-				});
+			$.ajax({
+				type: 'POST',
+				url: "/location",
+				data: {long:position.coords.longitude, lat:position.coords.latitude},
+				async:false,
+			});
+			$.ajax({
+				dataType: "text",
+				url: "location.json",
+				success: function(data) {
+					var address = $.parseJSON(data);
+					document.getElementById('location-text').innerHTML = address.location;
+					$("#location-image").show();
+				}
+			});
+			$.ajax({
+				dataType: "text",
+				url: "deals.json",
+				success: function(data) {
+					nearby_bars = $.parseJSON(data);
+					cardFlip(nearby_bars);
+				}
+			});
 		}, function (e) {
 				alert("Please enable the location feature in your browser.");
 		}, {

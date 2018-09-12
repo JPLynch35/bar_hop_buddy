@@ -11,7 +11,7 @@
 			mapboxgl.accessToken = "pk.eyJ1IjoianBseW5jaDM1IiwiYSI6ImNqbHIyczB1NjAwbDczcXMzN3Vra2RsNGwifQ.-BxRMCzfhhmbT8lA-qYqcQ";
 			const map = new mapboxgl.Map({
 				container: "map",
-				style: "mapbox://styles/jplynch35/cjlva7ol02cgc2rp4xttj72jd",
+				style: "mapbox://styles/jplynch35/cjlvaecye2c492svupumelv7u",
 				center: [geo_json[0], geo_json[1]],
 				zoom: 14.0
 			});
@@ -38,8 +38,8 @@
 					"type": "symbol",
 					"source": "user location",
 					"layout": {
-						"icon-image": "circle-11",
-						"icon-size": 2,
+						"icon-image": "circle-15",
+						"icon-size": 1,
 						"icon-allow-overlap": true
 					}
 				});
@@ -57,7 +57,7 @@
 					"type": "symbol",
 					"source": "bar locations",
 					"layout": {
-						"icon-image": "marker-15",
+						"icon-image": "bar-15",
 						"icon-size": 1,
 						"icon-allow-overlap": true
 					}
@@ -77,7 +77,7 @@
 					while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
 						coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
 					}
-				var pop_up = name + '<br />' + address + '<br />' + 'Happy Hour: ' + hh_hours + '<br />' + deal1 + '<br />' + deal2 + '<br />' + deal3 + '<br />' + deal4 + '<br />' + deal5;
+					var pop_up = name + '<br />' + address + '<br />' + 'Happy Hour: ' + hh_hours + '<br />' + deal1 + '<br />' + deal2 + '<br />' + deal3 + '<br />' + deal4 + '<br />' + deal5;
 					new mapboxgl.Popup()
 						.setLngLat(coordinates)
 						.setHTML(pop_up)
