@@ -73,11 +73,11 @@
   .nav-app-name {
     font-family: Rubik;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
   }
 
   .nav-image {
-    margin-top: 5px;
+    margin-top: 6px;
   }
 
   .ui.button {
@@ -94,14 +94,10 @@
     font-weight: 100;
   }
   
-  .ui.button.deals {
-    background-color: #455e7a;
-    color: white;
-    font-family: Rubik;
-    font-weight: 100;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 50px;
+  .card-buttons {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 10px;
 
   }
   
@@ -112,27 +108,62 @@
   .rubik-thin {
     font-family: Rubik;
     font-weight: 100;
+    font-size: 18px;
   }
 
   .bar-card {
-    width: 350px;
-    height: 475px;
+    min-width: 450px;
+    min-height: 550px;
     background-color: white;
     border-style: solid;
     border-width: 1px;
-    border-color: #455e7a;
-    margin-top: 10px;
+    border-color: #202020;
     border-radius: 10px;
+    margin-top: 10px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 26px auto 0;
+    z-index: 0;
+  }
+  
+  .bar-card:before, .bar-card:after {
+    content: "";
+    z-index: -1;
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #202020;
+    border-radius: 10px;
+  }
+  .bar-card:before {
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+  }
+  .bar-card:after {
+    background: #f6f6f6;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(0.4deg);
   }
 
   #dc-name {
-    margin-top: 25px;
-    margin-bottom: 2px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-weight: bold;
     font-size: 24px;
   }
 
-  #dc-address, #dc-hours, #dc-hh_hours, #dc-message {
+  #dc-address, 
+  #dc-hours, 
+  #dc-hh_hours, 
+  #dc-message {
     line-height: 5px;
   }
 
@@ -141,7 +172,10 @@
     font-weight: bold;
   }
 
-  #dc-deals2, #dc-deals3, #dc-deals4, #dc-deals5 {
+  #dc-deals2, 
+  #dc-deals3, 
+  #dc-deals4, 
+  #dc-deals5 {
     margin-top: 20px;
     font-weight: bold;
   }
@@ -149,6 +183,7 @@
   #location {
     margin-top: 10px;
     font-style: italic;
+
   }
 
   #map {
