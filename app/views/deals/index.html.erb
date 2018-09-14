@@ -32,6 +32,7 @@
 <script>
 	$("#location-image, #button-box, #horizontal-line, #vertical-line").hide();
 	window.onload = getLocation();
+	let nearby_bars;
 	function getLocation() {
 		navigator.geolocation.getCurrentPosition(function (position) {
 			$.ajax({
@@ -42,18 +43,13 @@
 			});
 			$.ajax({
 				dataType: "text",
-				url: "location.json",
-				success: function(data) {
-					var address = $.parseJSON(data);
-					document.getElementById('location-text').innerHTML = address.location;
-					$("#location-image, #button-box, #horizontal-line, #vertical-line").show();
-				}
-			});
-			$.ajax({
-				dataType: "text",
 				url: "deals.json",
 				success: function(data) {
-					nearby_bars = $.parseJSON(data);
+					locations = $.parseJSON(data);
+					var user_location = locations[0]
+					nearby_bars = locations[1]
+					document.getElementById('location-text').innerHTML = user_location;
+					$("#location-image, #button-box, #horizontal-line, #vertical-line").show();
 					cardFlip(nearby_bars);
 				}
 			});
@@ -62,33 +58,32 @@
 		}, {
 			enableHighAccuracy: true
 		});
-		function dayName() {
-			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-			var d = new Date();
-			return days[d.getDay()];
-		};
-		let nearby_bars;
-		function cardFlip(nearby_bars) {
-			$("#dc-name").html(nearby_bars[0].name);
-			$("#dc-address").html(nearby_bars[0].address);
-			$("#dc-hours").html("Hours: " + nearby_bars[0].open[dayName()] + " - " + nearby_bars[0].close[dayName()]);
-			$("#dc-hh_hours").html("Happy Hour: " + nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
-			$("#dc-message").html(nearby_bars[0].message);
-			var deals = $.parseJSON(nearby_bars[0].deals)
-			$("#dc-deals1").html(deals[0]);
-			$("#dc-deals2").html(deals[1]);
-			$("#dc-deals3").html(deals[2]);
-			$("#dc-deals4").html(deals[3]);
-			$("#dc-deals5").html(deals[4]);
-		};
-		$("#like").click(function() {
-			$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
-			nearby_bars.shift();
-			cardFlip(nearby_bars);
-		});
-		$("#dislike").click(function() {
-			nearby_bars.shift();
-			cardFlip(nearby_bars);
-		});
 	};
+	function dayName() {
+		var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+		var d = new Date();
+		return days[d.getDay()];
+	};
+	function cardFlip(nearby_bars) {
+		$("#dc-name").html(nearby_bars[0].name);
+		$("#dc-address").html(nearby_bars[0].address);
+		$("#dc-hours").html("Hours: " + nearby_bars[0].open[dayName()] + " - " + nearby_bars[0].close[dayName()]);
+		$("#dc-hh_hours").html("Happy Hour: " + nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
+		$("#dc-message").html(nearby_bars[0].message);
+		var deals = $.parseJSON(nearby_bars[0].deals)
+		$("#dc-deals1").html(deals[0]);
+		$("#dc-deals2").html(deals[1]);
+		$("#dc-deals3").html(deals[2]);
+		$("#dc-deals4").html(deals[3]);
+		$("#dc-deals5").html(deals[4]);
+	};
+	$("#like").click(function() {
+		$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
+		nearby_bars.shift();
+		cardFlip(nearby_bars);
+	});
+	$("#dislike").click(function() {
+		nearby_bars.shift();
+		cardFlip(nearby_bars);
+	});
 </script>
