@@ -16,5 +16,7 @@ describe User, type: :model do
       email: 'Bob@gmail.com',
       token: 'hsdf873rjbhsdf'
     )
+
+    expect(user).to be_a(User)
   end
 end
