@@ -9,9 +9,10 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Rubik'/>
-    <%= favicon_link_tag asset_path('favicon-clock'), :rel => 'icon', :type =>  'image/png' %>
+    <meta name=viewport content='width=750'>
+    <%= favicon_link_tag asset_path("favicon-clock.png"), :rel => 'icon', :type =>  'image/png' %>
     <% if current_page?(root_path) %>
-      <meta http-equiv="refresh" content="3;url=https://barhopbuddy.herokuapp.com/auth/google_oauth2" />
+      <meta http-equiv="refresh" content="3;url=http://localhost:3000/auth/google_oauth2" />
     <% end %>
   </head>
 
@@ -21,17 +22,17 @@
         <div class="five wide column fitted item">
           <span class="left-pad nav-app-name">BarH</span>
           <div class="nav-image">
-            <%= image_tag "five-oclock-white", height: "16px", width: "16px"%>
+            <%= image_tag "five-oclock-white", height: "23px", width: "23px"%>
           </div>
             <span class="nav-app-name">pBuddy</span>
         </div>
         <% if current_page?(deals_path) %>
           <div class="six wide column item flex-row-center">
-            <%= button_to 'Find Your Bars', map_path, class: "ui button", method: :get %>
+            <%= button_to 'Find Your Bars', map_path, class: "large ui button", method: :get %>
           </div>
         <% elsif current_page?(map_path) %>
           <div class="six wide column item flex-row-center">
-            <%= button_to 'Find More Bars', deals_path, class: "ui button", method: :get %>
+            <%= button_to 'Find More Bars', deals_path, class: "large ui button", method: :get %>
           </div>
         <% end %>
         <div class="five wide column right item flex-row-r">

@@ -19,10 +19,5 @@ describe 'a user' do
 
       expect(current_path).to eq(map_path)
     end
-    it 'can see their current location' do
-      visit deals_path
-
-      expect(page).to have_button('Calculate Location')
-    end
   end
 end

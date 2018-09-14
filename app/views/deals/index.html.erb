@@ -1,10 +1,8 @@
 <div class="flex-row-center">
-    <button class="ui button rubik-thin", onclick="getLocation()">
-        Calculate Location
-    </button>
-</div>
-<div class="flex-row-center">
-    <p class="rubik-thin", id="location"><br></p>
+	<%= image_tag "location", height: "40px", width: "40px", id: "location-image" %>
+	<p class="rubik-thin", id="location-text">
+		<%= image_tag "load-bar" %>
+	</p>
 </div>
 <main class="flex-row-center">
 	<div class="bar-card">
@@ -18,74 +16,74 @@
 		<p class="rubik-thin flex-row-center", id="dc-deals3"><br></p>
 		<p class="rubik-thin flex-row-center", id="dc-deals4"><br></p>
 		<p class="rubik-thin flex-row-center", id="dc-deals5"><br></p>
-		<div class="flex-row-center">
-			<button class="ui button deals rubik-thin", id="like">
-				Hell Yes!
-			</button>
-			<button class="ui button deals rubik-thin", id="dislike">
-				Hell No!
-			</button>
+		<div class="flex-row-center", id="horizontal-line"></div>
+		<div class="flex-row-center", id="button-box">
+			<div class="click-box", id="dislike">
+				<input type="image" src="assets/negative.svg", height="100px", width="100px", class="card-buttons" />
+			</div>
+			<div id="vertical-line"></div>
+			<div class="click-box", id="like">
+				<input type="image" src="assets/positive.svg", height="100px", width="100px", class="card-buttons" />
+			</div>
 		</div>
 	</div>
 </main>
 
 <script>
+	$("#location-image, #button-box, #horizontal-line, #vertical-line").hide();
+	window.onload = getLocation();
+	let nearby_bars;
 	function getLocation() {
 		navigator.geolocation.getCurrentPosition(function (position) {
-				$.ajax({
-					type: 'POST',
-					url: "/location",
-					data: {long:position.coords.longitude, lat:position.coords.latitude},
-					async:false,
-				});
-				$.ajax({
-					dataType: "text",
-					url: "location.json",
-					success: function(data) {
-						var address = $.parseJSON(data);
-						document.getElementById('location').innerHTML = address.location;
-					}
-				});
-				$.ajax({
-					dataType: "text",
-					url: "deals.json",
-					success: function(data) {
-						nearby_bars = $.parseJSON(data);
-						cardFlip(nearby_bars);
-					}
-				});
+			$.ajax({
+				type: 'POST',
+				url: "/location",
+				data: {long:position.coords.longitude, lat:position.coords.latitude},
+				async:false,
+			});
+			$.ajax({
+				dataType: "text",
+				url: "deals.json",
+				success: function(data) {
+					locations = $.parseJSON(data);
+					var user_location = locations[0]
+					nearby_bars = locations[1]
+					document.getElementById('location-text').innerHTML = user_location;
+					$("#location-image, #button-box, #horizontal-line, #vertical-line").show();
+					cardFlip(nearby_bars);
+				}
+			});
 		}, function (e) {
 				alert("Please enable the location feature in your browser.");
 		}, {
 			enableHighAccuracy: true
 		});
-		function dayName() {
-			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-			var d = new Date();
-			return days[d.getDay()];
-		};
-		let nearby_bars;
-		function cardFlip(nearby_bars) {
-			$("#dc-name").html(nearby_bars[0].name);
-			$("#dc-address").html(nearby_bars[0].address);
-			$("#dc-hours").html("Hours: " + nearby_bars[0].open[dayName()] + " - " + nearby_bars[0].close[dayName()]);
-			$("#dc-hh_hours").html("Happy Hour: " + nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
-			$("#dc-message").html(nearby_bars[0].message);
-			var deals = $.parseJSON(nearby_bars[0].deals)
-			$("#dc-deals1").html(deals[0]);
-			$("#dc-deals2").html(deals[1]);
-			$("#dc-deals3").html(deals[2]);
-			$("#dc-deals4").html(deals[3]);
-			$("#dc-deals5").html(deals[4]);
-		};
-		$("#like").click(function() {
-			$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
-			nearby_bars.shift();
-			cardFlip(nearby_bars);
-		});
-		$("#dislike").click(function() {
-			nearby_bars.shift();
-			cardFlip(nearby_bars);
-		});
 	};
+	function dayName() {
+		var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+		var d = new Date();
+		return days[d.getDay()];
+	};
+	function cardFlip(nearby_bars) {
+		$("#dc-name").html(nearby_bars[0].name);
+		$("#dc-address").html(nearby_bars[0].address);
+		$("#dc-hours").html("Hours: " + nearby_bars[0].open[dayName()] + " - " + nearby_bars[0].close[dayName()]);
+		$("#dc-hh_hours").html("Happy Hour: " + nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
+		$("#dc-message").html(nearby_bars[0].message);
+		var deals = $.parseJSON(nearby_bars[0].deals)
+		$("#dc-deals1").html(deals[0]);
+		$("#dc-deals2").html(deals[1]);
+		$("#dc-deals3").html(deals[2]);
+		$("#dc-deals4").html(deals[3]);
+		$("#dc-deals5").html(deals[4]);
+	};
+	$("#like").click(function() {
+		$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
+		nearby_bars.shift();
+		cardFlip(nearby_bars);
+	});
+	$("#dislike").click(function() {
+		nearby_bars.shift();
+		cardFlip(nearby_bars);
+	});
 </script>
