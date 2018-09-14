@@ -21,7 +21,6 @@ describe 'a user' do
     end
     it 'can see a map with their current location' do
       visit deals_path
-      click_on 'Calculate Location'
       click_on 'Find Your Bars'
 
       expect(current_path).to eq(map_path)

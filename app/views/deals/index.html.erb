@@ -17,7 +17,7 @@
 		<p class="rubik-thin flex-row-center", id="dc-deals4"><br></p>
 		<p class="rubik-thin flex-row-center", id="dc-deals5"><br></p>
 		<div class="flex-row-center", id="horizontal-line"></div>
-		<div class="flex-row-center">
+		<div class="flex-row-center", id="button-box">
 			<div class="click-box", id="dislike">
 				<input type="image" src="assets/negative.svg", height="100px", width="100px", class="card-buttons" />
 			</div>
@@ -30,7 +30,7 @@
 </main>
 
 <script>
-	$("#location-image").hide();
+	$("#location-image, #button-box, #horizontal-line, #vertical-line").hide();
 	window.onload = getLocation();
 	function getLocation() {
 		navigator.geolocation.getCurrentPosition(function (position) {
@@ -46,7 +46,7 @@
 				success: function(data) {
 					var address = $.parseJSON(data);
 					document.getElementById('location-text').innerHTML = address.location;
-					$("#location-image").show();
+					$("#location-image, #button-box, #horizontal-line, #vertical-line").show();
 				}
 			});
 			$.ajax({
