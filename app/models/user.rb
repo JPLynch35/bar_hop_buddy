@@ -2,6 +2,7 @@ class User < ApplicationRecord
   validates :uid, uniqueness: true
   validates :email, uniqueness: true
   validates :token, uniqueness: true
+  has_many :choices
   has_many :user_bars
   has_many :bars, through: :user_bars
 
