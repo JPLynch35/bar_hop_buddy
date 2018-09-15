@@ -21,6 +21,10 @@ NAMES.each_with_index do |bar_name, i|
     hh_end: HHEND,
     message: MESSAGE.sample,
     deals: DEALS.sample(5),
-    id_key: SecureRandom.hex(16)
+    owner_email:  if i == 0
+                      'JPLynch35@gmail.com'
+                  else
+                    'Bill2343241@gmail.com'
+                  end
   )
 end

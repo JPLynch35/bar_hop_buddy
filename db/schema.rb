@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20180915140730) do
     t.text "hh_end"
     t.text "message"
     t.text "deals"
-    t.string "id_key"
+    t.string "owner_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -11,7 +11,7 @@ class CreateBars < ActiveRecord::Migration[5.1]
       t.text :hh_end
       t.text :message
       t.text :deals
-      t.string :id_key
+      t.string :owner_email
 
       t.timestamps
     end
