@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/location', to: 'location#create'
   get '/location', to: 'location#show'
   post '/user_bars', to: 'user_bar#create'
+  delete '/user_bars', to: 'user_bar#destroy'
 
   resources :deals, only: [:index]
   resource :map, only: [:show], controller: 'map'

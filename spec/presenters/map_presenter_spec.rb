@@ -1,12 +1,15 @@
 require 'rails_helper'
 
-describe DealsPresenter do
+describe MapPresenter do
   it 'exists' do
-    long = -104.8772123
-    lat = 39.7529201
-    presenter = DealsPresenter.new(long, lat)
+    user = User.create(
+      uid: '239487234023434',
+      email: 'Bob@gmail.com',
+      token: 'hsdf873rjbhsdf'
+    )
+    presenter = MapPresenter.new(user)
 
-    expect(presenter).to be_a(DealsPresenter)
+    expect(presenter).to be_a(MapPresenter)
   end
 
   describe 'instance methods' do
@@ -37,22 +40,42 @@ describe DealsPresenter do
         )
       end
     end
-    it 'can display the current user address' do
-      long = -104.8772123
-      lat = 39.7529201
-      presenter = DealsPresenter.new(long, lat)
+    it 'can provide users favorite bar data to the map' do
+      user = User.create(
+        uid: '239487234023434',
+        email: 'Bob@gmail.com',
+        token: 'hsdf873rjbhsdf',
+        last_long: '-104.8772123',
+        last_lat: '39.7529201'
+      )
+      user.user_bars.create(bar_id: 2)
+      presenter = MapPresenter.new(user)
+      bar = Bar.find(2)
+      day = Time.now.strftime("%A").to_sym
+      expected = [
+        user.last_long,
+        user.last_lat,
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [bar.longitude, bar.latitude]
+          },
+          properties: {
+            name: bar.name,
+            address: bar.address,
+            hh_hours: bar.hh_start[day] + ' - ' + bar.hh_end[day],
+            deal1: JSON.parse(bar.deals)[0],
+            deal2: JSON.parse(bar.deals)[1],
+            deal3: JSON.parse(bar.deals)[2],
+            deal4: JSON.parse(bar.deals)[3],
+            deal5: JSON.parse(bar.deals)[4],
+            "marker-symbol": 'marker'
+          }
+        }
+      ]
 
-      expect(presenter.current_address).to be_a(String)
-      expect(presenter.current_address).to eq('2501 N Dallas St Aurora, Colorado')
-    end
-    it 'can calculate which bars are near the user' do
-      long = -104.99835499999999
-      lat = 39.7527063
-      presenter = DealsPresenter.new(long, lat)
-
-      expect(presenter.nearby_bars).to be_an(Array)
-      expect(presenter.nearby_bars).to_not include("Fiction Brewery")
-      expect(presenter.nearby_bars.count).to eq(5)
+      expect(presenter.locations).to eq(expected)
     end
   end
 end
