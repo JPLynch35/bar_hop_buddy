@@ -6,16 +6,16 @@
 </div>
 <main class="flex-row-center">
 	<div class="bar-card">
-		<p class="rubik-thin flex-row-center", id="dc-name"><br></p>
-		<p class="rubik-thin flex-row-center", id="dc-address"><br></p>
-		<p class="rubik-thin flex-row-center", id="dc-hours"><br></p>
-		<p class="rubik-thin flex-row-center", id="dc-hh_hours"><br></p>
-		<p class="rubik-thin flex-row-center", id="dc-message"><br></p>
-		<p class="rubik-thin flex-row-center", id="dc-deals1"><br></p>
-		<p class="rubik-thin flex-row-center", id="dc-deals2"><br></p>
-		<p class="rubik-thin flex-row-center", id="dc-deals3"><br></p>
-		<p class="rubik-thin flex-row-center", id="dc-deals4"><br></p>
-		<p class="rubik-thin flex-row-center", id="dc-deals5"><br></p>
+		<p class="rubik-thin flex-row-center", id="dc-name"></br></p>
+		<p class="rubik-thin flex-row-center", id="dc-address"></br></p>
+		<p class="rubik-thin flex-row-center", id="dc-hours"></br></p>
+		<p class="rubik-thin flex-row-center", id="dc-hh_hours"></br></p>
+		<p class="rubik-thin flex-row-center", id="dc-message"></br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals1"></br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals2"></br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals3"></br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals4"></br></p>
+		<p class="rubik-thin flex-row-center", id="dc-deals5"></br></p>
 		<div class="flex-row-center", id="horizontal-line"></div>
 		<div class="flex-row-center", id="button-box">
 			<div class="click-box", id="dislike">
@@ -59,6 +59,34 @@
 			enableHighAccuracy: true
 		});
 	};
+	$("#like").click(function() {
+		$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
+		nearby_bars.shift();
+		if (nearby_bars.legnth === undefined) {
+			lastCard();
+			$("#button-box, #horizontal-line, #vertical-line").hide();
+		} else {
+			cardFlip(nearby_bars);
+		};
+	});
+	$("#dislike").click(function() {
+		$.ajax({
+			type: "DELETE",
+			url: "/user_bars",
+			data: {
+				user_bar: {
+					bar_id: nearby_bars[0].id
+				}
+			},
+		});
+		nearby_bars.shift();
+		if (nearby_bars.legnth === undefined) {
+			lastCard();
+			$("#button-box, #horizontal-line, #vertical-line").hide();
+		} else {
+			cardFlip(nearby_bars);
+		};
+	});
 	function dayName() {
 		var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 		var d = new Date();
@@ -77,13 +105,16 @@
 		$("#dc-deals4").html(deals[3]);
 		$("#dc-deals5").html(deals[4]);
 	};
-	$("#like").click(function() {
-		$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
-		nearby_bars.shift();
-		cardFlip(nearby_bars);
-	});
-	$("#dislike").click(function() {
-		nearby_bars.shift();
-		cardFlip(nearby_bars);
-	});
+	function lastCard() {
+		$("#dc-name").html('</br>');
+		$("#dc-address").html('</br>');
+		$("#dc-hours").html('</br>');
+		$("#dc-hh_hours").html('</br>');
+		$("#dc-deals1").html('</br>');
+		$("#dc-deals2").html('</br>');
+		$("#dc-deals3").html('</br>');
+		$("#dc-deals4").html('</br>');
+		$("#dc-deals5").html('</br>');
+		$("#dc-message").html('No more happy hour deals found in your area.');
+	};
 </script>
