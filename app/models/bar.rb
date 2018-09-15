@@ -4,6 +4,7 @@ class Bar < ApplicationRecord
   serialize :close
   serialize :hh_start
   serialize :hh_end
+  has_many :choices
   has_many :user_bars
   has_many :users, through: :user_bars
 

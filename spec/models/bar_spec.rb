@@ -18,5 +18,6 @@ describe Bar, type: :model do
   describe 'relationships' do
     it { should have_many(:user_bars) }
     it { should have_many(:users).through(:user_bars) }
+    it { should have_many(:choices) }
   end
 end

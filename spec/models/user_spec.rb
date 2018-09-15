@@ -9,6 +9,7 @@ describe User, type: :model do
   describe 'relationships' do
     it { should have_many(:user_bars) }
     it { should have_many(:bars).through(:user_bars) }
+    it { should have_many(:choices) }
   end
   it 'exists' do
     user = User.create(

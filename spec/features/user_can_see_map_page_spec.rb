@@ -13,9 +13,9 @@ describe 'a user' do
     it 'can see Find More Bars button in nav' do
       visit map_path
 
-      expect(page).to have_button('Find More Bars')
+      expect(page).to have_button('Select Your Bars')
 
-      click_on 'Find More Bars'
+      click_on 'Select Your Bars'
 
       expect(current_path).to eq(deals_path)
     end
