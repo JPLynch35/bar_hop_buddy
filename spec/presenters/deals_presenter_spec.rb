@@ -33,7 +33,11 @@ describe DealsPresenter do
           hh_end: hhend,
           message: message.sample,
           deals: deals.sample(5),
-          id_key: SecureRandom.hex(16)
+          owner_email:  if i == 0
+                          'JPLynch35@gmail.com'
+                        else
+                          'Bill2343241@gmail.com'
+                        end
         )
       end
     end

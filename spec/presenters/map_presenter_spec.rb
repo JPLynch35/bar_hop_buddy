@@ -4,8 +4,7 @@ describe MapPresenter do
   it 'exists' do
     user = User.create(
       uid: '239487234023434',
-      email: 'Bob@gmail.com',
-      token: 'hsdf873rjbhsdf'
+      email: 'Bob@gmail.com'
     )
     presenter = MapPresenter.new(user)
 
@@ -36,7 +35,11 @@ describe MapPresenter do
           hh_end: hhend,
           message: message.sample,
           deals: deals.sample(5),
-          id_key: SecureRandom.hex(16)
+          owner_email:  if i == 0
+                          'JPLynch35@gmail.com'
+                        else
+                          'Bill2343241@gmail.com'
+                        end
         )
       end
     end
@@ -44,7 +47,6 @@ describe MapPresenter do
       user = User.create(
         uid: '239487234023434',
         email: 'Bob@gmail.com',
-        token: 'hsdf873rjbhsdf',
         last_long: '-104.8772123',
         last_lat: '39.7529201'
       )

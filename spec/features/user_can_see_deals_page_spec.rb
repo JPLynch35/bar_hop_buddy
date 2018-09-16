@@ -5,8 +5,7 @@ describe 'a user' do
     before :each do
       user = User.create(
         uid: '239487234023434',
-        email: 'Bob@gmail.com',
-        token: 'hsdf873rjbhsdf'
+        email: 'Bob@gmail.com'
       )
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     end

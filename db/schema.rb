@@ -14,10 +14,11 @@ ActiveRecord::Schema.define(version: 20180915140730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "citext"
 
   create_table "bars", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
+    t.citext "name"
+    t.citext "address"
     t.string "longitude"
     t.string "latitude"
     t.text "open"
@@ -26,7 +27,7 @@ ActiveRecord::Schema.define(version: 20180915140730) do
     t.text "hh_end"
     t.text "message"
     t.text "deals"
-    t.string "owner_email"
+    t.citext "owner_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,8 +62,7 @@ ActiveRecord::Schema.define(version: 20180915140730) do
 
   create_table "users", force: :cascade do |t|
     t.string "uid"
-    t.string "email"
-    t.string "token"
+    t.citext "email"
     t.string "last_location"
     t.string "last_long"
     t.string "last_lat"
