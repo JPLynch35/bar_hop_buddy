@@ -24,7 +24,7 @@
           <div class="nav-image">
             <%= image_tag "five-oclock-white", height: "23px", width: "23px"%>
           </div>
-            <span class="nav-app-name">pBuddy</span>
+          <span class="nav-app-name">pBuddy</span>
         </div>
         <% if current_page?(deals_path) %>
           <div class="six wide column item flex-row-center">
@@ -37,6 +37,9 @@
         <% end %>
         <div class="five wide column right item flex-row-r">
           <%= button_to 'Log Out', logout_path, class: "ui button logout", method: :delete %>
+          <% if bar_owner? %>
+            <%= button_to 'Edit Your Bar', edit_bar_path(bar_owner?), class: "ui button", method: :get %>
+          <% end %>
         </div>
       </nav>
     <% end %>
