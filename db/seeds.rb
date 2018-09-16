@@ -1,4 +1,4 @@
-NAMES = ['Brothers Bar', "1UP", 'Oskar Blues', 'Fiction Brewery', 'Freshcraft', 'Thirsty Lion', 'Stanley Beer Hall']
+NAMES = ['Sisters Bar', "1DOWN", 'Oskar Greens', 'Truth Brewery', 'World of Freshcraft', 'Thirsty Lamb', 'Stan-Lee Beer House']
 ADDRESS = ['1920 Market Street, Denver, CO', '1925 Blake Street, Denver, CO', '1624 Market Street, Denver, CO', '7101 East Colfax Avenue, Denver, CO', '1530 Blake Street, Denver, CO', '1605 Wynkoop Street, Denver, CO', '2501 Dallas Street, Aurora, CO']
 LONGITUDE = ['-104.994192', '-104.994983', '-104.997508', '-104.905731', '-104.999540', '-105.0007', '-104.878220']
 LATITUDE = ['39.753057', '39.753782', '39.750111', '39.740381', '39.749920', '39.752753', '39.752620']
