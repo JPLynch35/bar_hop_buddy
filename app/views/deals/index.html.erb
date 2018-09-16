@@ -51,7 +51,13 @@
 					nearby_bars = locations[1]
 					document.getElementById('location-text').innerHTML = user_location;
 					$("#location-image, #button-box, #horizontal-line, #vertical-line").show();
-					cardFlip(nearby_bars);
+					if (nearby_bars.length === 0) {
+						lastCard();
+						$("#dc-message").html('No happy hour deals found in your area.');
+						$("#button-box, #horizontal-line, #vertical-line").hide();
+					} else {
+						cardFlip(nearby_bars);
+					};
 				}
 			});
 		}, function (e) {
@@ -60,24 +66,6 @@
 			enableHighAccuracy: true
 		});
 	};
-	$("#like").click(function() {
-		$(".bar-card-after").removeClass("instant").addClass("rotate-right");
-		$(".bar-card").removeClass("instant").addClass("shift-right");
-		setTimeout(function(){
-			$(".bar-card").addClass("instant").removeClass("shift-right");
-		}, 290);
-		setTimeout(function(){
-			$(".bar-card-after").addClass("instant").removeClass("rotate-right");
-		}, 300);
-		$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
-		nearby_bars.shift();
-		if (nearby_bars.legnth === undefined) {
-			lastCard();
-			$("#button-box, #horizontal-line, #vertical-line").hide();
-		} else {
-			cardFlip(nearby_bars);
-		};
-	});
 	$("#dislike").click(function() {
 		$(".bar-card-after").removeClass("instant").addClass("rotate-left");
 		$(".bar-card").removeClass("instant").addClass("shift-left");
@@ -97,7 +85,25 @@
 			},
 		});
 		nearby_bars.shift();
-		if (nearby_bars.legnth === undefined) {
+		if (nearby_bars.length === 0) {
+			lastCard();
+			$("#button-box, #horizontal-line, #vertical-line").hide();
+		} else {
+			cardFlip(nearby_bars);
+		};
+	});
+	$("#like").click(function() {
+		$(".bar-card-after").removeClass("instant").addClass("rotate-right");
+		$(".bar-card").removeClass("instant").addClass("shift-right");
+		setTimeout(function(){
+			$(".bar-card").addClass("instant").removeClass("shift-right");
+		}, 290);
+		setTimeout(function(){
+			$(".bar-card-after").addClass("instant").removeClass("rotate-right");
+		}, 300);
+		$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
+		nearby_bars.shift();
+		if (nearby_bars.length === 0) {
 			lastCard();
 			$("#button-box, #horizontal-line, #vertical-line").hide();
 		} else {
