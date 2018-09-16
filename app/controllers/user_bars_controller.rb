@@ -1,4 +1,4 @@
-class UserBarController < ApplicationController
+class UserBarsController < ApplicationController
   
   def create
     current_user.user_bars.create(user_bar_params) unless logged_user_bar
