@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20180915140730) do
     t.citext "address"
     t.string "longitude"
     t.string "latitude"
-    t.text "open"
-    t.text "close"
-    t.text "hh_start"
-    t.text "hh_end"
+    t.json "open", default: {}
+    t.json "close", default: {}
+    t.json "hh_start", default: {}
+    t.json "hh_end", default: {}
     t.text "message"
-    t.text "deals"
+    t.json "deals", default: {}
     t.citext "owner_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -70,5 +70,9 @@ ActiveRecord::Schema.define(version: 20180915140730) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "choices", "bars"
+  add_foreign_key "choices", "users"
   add_foreign_key "locations", "users"
+  add_foreign_key "user_bars", "bars"
+  add_foreign_key "user_bars", "users"
 end

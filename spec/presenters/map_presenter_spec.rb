@@ -67,11 +67,11 @@ describe MapPresenter do
             name: bar.name,
             address: bar.address,
             hh_hours: bar.hh_start[day] + ' - ' + bar.hh_end[day],
-            deal1: JSON.parse(bar.deals)[0],
-            deal2: JSON.parse(bar.deals)[1],
-            deal3: JSON.parse(bar.deals)[2],
-            deal4: JSON.parse(bar.deals)[3],
-            deal5: JSON.parse(bar.deals)[4],
+            deal1: bar.deals[0],
+            deal2: bar.deals[1],
+            deal3: bar.deals[2],
+            deal4: bar.deals[3],
+            deal5: bar.deals[4],
             "marker-symbol": 'marker'
           }
         }

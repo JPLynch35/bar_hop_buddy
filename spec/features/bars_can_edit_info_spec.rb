@@ -41,7 +41,7 @@ describe 'a user' do
         click_on 'Edit Your Bar'
       end
 
-      expect(current_path).to eq(edit_bars_path(1))
+      expect(current_path).to eq(edit_bar_path(Bar.first))
     end
   end
 end
