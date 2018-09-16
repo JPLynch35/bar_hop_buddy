@@ -4,7 +4,7 @@
 		<%= image_tag "load-bar" %>
 	</p>
 </div>
-<main class="flex-row-center">
+<main class="flex-row-center card-holder">
 	<div class="bar-card">
 		<p class="rubik-thin flex-row-center", id="dc-name"></br></p>
 		<p class="rubik-thin flex-row-center", id="dc-address"></br></p>
@@ -27,6 +27,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="bar-card-after"></div>
 </main>
 
 <script>
@@ -60,6 +61,14 @@
 		});
 	};
 	$("#like").click(function() {
+		$(".bar-card-after").removeClass("instant").addClass("rotate-right");
+		$(".bar-card").removeClass("instant").addClass("shift-right");
+		setTimeout(function(){
+			$(".bar-card").addClass("instant").removeClass("shift-right");
+		}, 290);
+		setTimeout(function(){
+			$(".bar-card-after").addClass("instant").removeClass("rotate-right");
+		}, 300);
 		$.post("/user_bars",{user_bar: {bar_id: nearby_bars[0].id}})
 		nearby_bars.shift();
 		if (nearby_bars.legnth === undefined) {
@@ -70,6 +79,14 @@
 		};
 	});
 	$("#dislike").click(function() {
+		$(".bar-card-after").removeClass("instant").addClass("rotate-left");
+		$(".bar-card").removeClass("instant").addClass("shift-left");
+		setTimeout(function(){
+			$(".bar-card").addClass("instant").removeClass("shift-left");
+		}, 290);
+		setTimeout(function(){
+			$(".bar-card-after").addClass("instant").removeClass("rotate-left");
+		}, 300);
 		$.ajax({
 			type: "DELETE",
 			url: "/user_bars",
