@@ -13,4 +13,5 @@
 //= require jquery3
 //= require jquery_ujs
 //= require semantic-ui
+//= require Chart.min
 //= require_tree .

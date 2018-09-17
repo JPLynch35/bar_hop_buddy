@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :deals, only: [:index]
   resource :map, only: [:show], controller: 'map'
-  resources :bars, only: [:edit]
+  resources :bars, only: [:edit, :update]
 end
