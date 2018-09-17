@@ -21,6 +21,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'omniauth-google-oauth2'
 gem 'jquery-rails'
+gem 'chart-js-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

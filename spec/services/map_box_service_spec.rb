@@ -13,8 +13,7 @@ describe MapBoxService do
     before :each do
       user = User.new(
         uid: '239487234023434',
-        email: 'Bob@gmail.com',
-        token: 'hsdf873rjbhsdf'
+        email: 'Bob@gmail.com'
       )
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
       long = -104.8772123

@@ -1,0 +1,110 @@
+<h1 class="flex-row-center edit-title"><%= @presenter.bar.name %></h1>
+<p class="flex-row-center rubik-thin"><%= @presenter.bar.address %></p>
+<main>
+  <% ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].each do |day| %>
+    <div id="<%= day %>">
+      <canvas class="all-charts", id="<%= day.downcase %>Chart"></canvas> 
+    </div>
+  <% end %>
+</main>
+
+<script>
+  var sun_ctx = document.getElementById("sundayChart");
+  var sundayChart = new Chart(sun_ctx, {
+      type: 'doughnut',
+      data: { 
+        datasets: [{
+          data: <%= @presenter.day_choices('Sunday') %>
+        }],
+        labels: [
+          'Positive',
+          'Negative',
+        ]
+      },
+      options: Chart.defaults.doughnut
+  });
+  var mon_ctx = document.getElementById("mondayChart");
+  var mondayChart = new Chart(mon_ctx, {
+      type: 'doughnut',
+      data: { 
+        datasets: [{
+          data: <%= @presenter.day_choices('Monday') %>
+        }],
+        labels: [
+          'Positive',
+          'Negative',
+        ]
+      },
+      options: Chart.defaults.doughnut
+  });
+  var tues_ctx = document.getElementById("tuesdayChart");
+  var tuesdayChart = new Chart(tues_ctx, {
+      type: 'doughnut',
+      data: { 
+        datasets: [{
+          data: <%= @presenter.day_choices('Tuesday') %>
+        }],
+        labels: [
+          'Positive',
+          'Negative',
+        ]
+      },
+      options: Chart.defaults.doughnut
+  });
+  var weds_ctx = document.getElementById("wednesdayChart");
+  var wednesdayChart = new Chart(weds_ctx, {
+      type: 'doughnut',
+      data: { 
+        datasets: [{
+          data: <%= @presenter.day_choices('Wednesday') %>
+        }],
+        labels: [
+          'Positive',
+          'Negative',
+        ]
+      },
+      options: Chart.defaults.doughnut
+  });
+  var thurs_ctx = document.getElementById("thursdayChart");
+  var thursdayChart = new Chart(thurs_ctx, {
+      type: 'doughnut',
+      data: { 
+        datasets: [{
+          data: <%= @presenter.day_choices('Thursday') %>
+        }],
+        labels: [
+          'Positive',
+          'Negative',
+        ]
+      },
+      options: Chart.defaults.doughnut
+  });
+  var fri_ctx = document.getElementById("fridayChart");
+  var fridayChart = new Chart(fri_ctx, {
+      type: 'doughnut',
+      data: { 
+        datasets: [{
+          data: <%= @presenter.day_choices('Friday') %>
+        }],
+        labels: [
+          'Positive',
+          'Negative',
+        ]
+      },
+      options: Chart.defaults.doughnut
+  });
+  var sat_ctx = document.getElementById("saturdayChart");
+  var saturdayChart = new Chart(sat_ctx, {
+      type: 'doughnut',
+      data: { 
+        datasets: [{
+          data: <%= @presenter.day_choices('Saturday') %>
+        }],
+        labels: [
+          'Positive',
+          'Negative',
+        ]
+      },
+      options: Chart.defaults.doughnut
+  });
+</script>

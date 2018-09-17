@@ -1,5 +1,5 @@
 class Bar < ApplicationRecord
-  validates_presence_of :name, :address, :longitude, :latitude, :open, :close, :hh_start, :hh_end, :message, :deals, :id_key
+  validates_presence_of :name, :address, :longitude, :latitude, :open, :close, :hh_start, :hh_end, :message, :deals, :owner_email
   serialize :open
   serialize :close
   serialize :hh_start

@@ -1,4 +1,5 @@
 class LocationController < ApplicationController
+  
   def create
     long = params[:long]
     lat = params[:lat]
@@ -9,7 +10,6 @@ class LocationController < ApplicationController
   end
 
   private
-  
   def recently_logged_location
     current_user.locations.where(created_at: (Time.zone.now.utc - 1.hour)..Time.zone.now.utc).any?
   end

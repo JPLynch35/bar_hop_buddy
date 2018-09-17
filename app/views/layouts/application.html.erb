@@ -24,19 +24,22 @@
           <div class="nav-image">
             <%= image_tag "five-oclock-white", height: "23px", width: "23px"%>
           </div>
-            <span class="nav-app-name">pBuddy</span>
+          <span class="nav-app-name">pBuddy</span>
         </div>
         <% if current_page?(deals_path) %>
           <div class="six wide column item flex-row-center">
             <%= button_to 'Find Your Bars', map_path, class: "large ui button", method: :get %>
           </div>
-        <% elsif current_page?(map_path) %>
+        <% elsif current_page?(map_path) || current_page?(edit_bar_path(bar_owner?)) %>
           <div class="six wide column item flex-row-center">
             <%= button_to 'Select Your Bars', deals_path, class: "large ui button", method: :get %>
           </div>
         <% end %>
         <div class="five wide column right item flex-row-r">
           <%= button_to 'Log Out', logout_path, class: "ui button logout", method: :delete %>
+          <% if bar_owner? && !current_page?(edit_bar_path(bar_owner?)) %>
+            <%= button_to 'Edit Your Bar', edit_bar_path(bar_owner?), class: "ui button", method: :get %>
+          <% end %>
         </div>
       </nav>
     <% end %>

@@ -11,10 +11,10 @@ describe 'a visitor' do
       within('nav') do
         expect(page).to have_button('Find Your Bars')
       end
+      
       expect(User.last.id).to eq(1)
       expect(User.last.uid).to eq('83726423')
-      expect(User.last.email).to eq('Billy3241@gmail.com')
-      expect(User.last.token).to eq('hdsf7324fds')
+      expect(User.last.email).to eq('JPLynch35@gmail.com')
     end
   end
 end

@@ -14,19 +14,20 @@ ActiveRecord::Schema.define(version: 20180915140730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "citext"
 
   create_table "bars", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
+    t.citext "name"
+    t.citext "address"
     t.string "longitude"
     t.string "latitude"
-    t.text "open"
-    t.text "close"
-    t.text "hh_start"
-    t.text "hh_end"
+    t.json "open", default: {}
+    t.json "close", default: {}
+    t.json "hh_start", default: {}
+    t.json "hh_end", default: {}
     t.text "message"
-    t.text "deals"
-    t.string "id_key"
+    t.json "deals", default: {}
+    t.citext "owner_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,8 +62,7 @@ ActiveRecord::Schema.define(version: 20180915140730) do
 
   create_table "users", force: :cascade do |t|
     t.string "uid"
-    t.string "email"
-    t.string "token"
+    t.citext "email"
     t.string "last_location"
     t.string "last_long"
     t.string "last_lat"
@@ -70,5 +70,9 @@ ActiveRecord::Schema.define(version: 20180915140730) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "choices", "bars"
+  add_foreign_key "choices", "users"
   add_foreign_key "locations", "users"
+  add_foreign_key "user_bars", "bars"
+  add_foreign_key "user_bars", "users"
 end

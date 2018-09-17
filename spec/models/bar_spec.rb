@@ -12,7 +12,7 @@ describe Bar, type: :model do
     it { should validate_presence_of(:hh_end) }
     it { should validate_presence_of(:message) }
     it { should validate_presence_of(:deals) }
-    it { should validate_presence_of(:id_key) }
+    it { should validate_presence_of(:owner_email) }
   end
 
   describe 'relationships' do
