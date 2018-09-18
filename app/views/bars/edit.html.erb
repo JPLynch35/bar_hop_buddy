@@ -3,9 +3,9 @@
 <div class="flex-row-center">
   <%= form_for @presenter.bar do |f| %>
     <article class="input-fields">
-      <div class="ui input">
-        <%= f.label :message %>
-        <%= f.text_area :message, cols: 30, rows: 5 %>
+      <div class="ui form inline right-margin">
+          <%= f.label :message %>
+          <%= f.text_area :message, cols: 30, rows: 5 %>
       </div>
     </article>
     <%= f.submit "Update Message", class: "bar-edit-submit" %>
