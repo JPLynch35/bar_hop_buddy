@@ -252,13 +252,18 @@
 
   .vert-fields {
     display: block;
-    width: 350px;
+    width: 300px;
   }
 
   .input-fields {
     text-align: right;
   }
   
+  .bar-edit-submit {
+    margin-left: 16px;
+    display: inline;
+  }
+
   #dc-name {
     margin-bottom: 15px;
     font-weight: bold;
@@ -312,8 +317,4 @@
     margin-top: 15px;
     width: 1000px;
     height: 600px;
-  }
-
-  #bar-edit-submit {
-    margin-left: 16px;
   }
