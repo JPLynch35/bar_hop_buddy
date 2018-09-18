@@ -121,11 +121,11 @@
 		$("#dc-hours").html("Hours: " + nearby_bars[0].open[dayName()] + " - " + nearby_bars[0].close[dayName()]);
 		$("#dc-hh_hours").html("Happy Hour: " + nearby_bars[0].hh_start[dayName()] + " - " + nearby_bars[0].hh_end[dayName()]);
 		$("#dc-message").html(nearby_bars[0].message);
-		$("#dc-deals1").html(nearby_bars[0].deals[0]);
-		$("#dc-deals2").html(nearby_bars[0].deals[1]);
-		$("#dc-deals3").html(nearby_bars[0].deals[2]);
-		$("#dc-deals4").html(nearby_bars[0].deals[3]);
-		$("#dc-deals5").html(nearby_bars[0].deals[4]);
+		$("#dc-deals1").html(nearby_bars[0].deals[dayName()][0]);
+		$("#dc-deals2").html(nearby_bars[0].deals[dayName()][1]);
+		$("#dc-deals3").html(nearby_bars[0].deals[dayName()][2]);
+		$("#dc-deals4").html(nearby_bars[0].deals[dayName()][3]);
+		$("#dc-deals5").html(nearby_bars[0].deals[dayName()][4]);
 	};
 	function lastCard() {
 		$("#dc-name").html('</br>');
