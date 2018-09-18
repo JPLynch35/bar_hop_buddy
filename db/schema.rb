@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20180915140730) do
     t.json "hh_start", default: {}
     t.json "hh_end", default: {}
     t.text "message"
-    t.json "deals", default: {}
+    t.json "deals", default: []
     t.citext "owner_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

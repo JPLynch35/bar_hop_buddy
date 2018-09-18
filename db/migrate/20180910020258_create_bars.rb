@@ -11,7 +11,7 @@ class CreateBars < ActiveRecord::Migration[5.1]
       t.json :hh_start, default: {}
       t.json :hh_end, default: {}
       t.text :message
-      t.json :deals, default: {}
+      t.json :deals, default: []
       t.citext :owner_email
 
       t.timestamps

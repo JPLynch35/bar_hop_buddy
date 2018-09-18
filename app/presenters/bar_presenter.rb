@@ -5,8 +5,8 @@ class BarPresenter
   end
 
   def day_choices(weekday)
-    [bar.choices.where(click: true, created_at: prior_weekday(Date.today, weekday).all_day).length,
-      bar.choices.where(click: false, created_at: prior_weekday(Date.today, weekday).all_day).length]
+    [bar.choices.where(click: false, created_at: prior_weekday(Date.today, weekday).all_day).length,
+      bar.choices.where(click: true, created_at: prior_weekday(Date.today, weekday).all_day).length]
   end
 
   private

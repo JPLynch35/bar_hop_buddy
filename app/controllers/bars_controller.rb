@@ -7,7 +7,10 @@ class BarsController < ApplicationController
 
   def update
     @bar = Bar.find(params[:id])
-    @bar.update(bar_params)
+    @bar.open[bar_params.values[0].keys.first.to_sym] = [bar_params.values[0].values.first]
+    @bar.close[bar_params.values[1].keys.first.to_sym] = [bar_params.values[1].values.first]
+    @bar.hh_start[bar_params.values[2].keys.first.to_sym] = [bar_params.values[2].values.first]
+    @bar.hh_end[bar_params.values[3].keys.first.to_sym] = [bar_params.values[3].values.first]
     if @bar.save
       flash[:successs] = "@bar.name successfully updated."
       redirect_to edit_bar_path(@bar)

@@ -30,19 +30,20 @@ NAMES.each_with_index do |bar_name, i|
 end
 
 # Users
-(1..50).to_a.each do |num|
+(1..100).to_a.each do |num|
   User.create(uid: num.to_s, email: num.to_s + '@gmail.com')
 end
 
 #Choices and UserBars
 created = [
+  DateTime.now,
   DateTime.now-1.days,
   DateTime.now-2.days,
   DateTime.now-3.days,
   DateTime.now-4.days,
   DateTime.now-5.days,
   DateTime.now-6.days,
-  DateTime.now-7.days,
+  DateTime.now-7.days
 ]
 click = [true, false]
 User.all.each do |user|
