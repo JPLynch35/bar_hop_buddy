@@ -13,7 +13,15 @@ describe DealsPresenter do
         hh_start: { Sunday: '8am', Monday: '4pm', Tuesday: '4pm', Wednesday: '4pm', Thursday: '4pm', Friday: '4pm', Saturday: '4pm' },
         hh_end: { Sunday: '10pm', Monday: '6pm', Tuesday: '6pm', Wednesday: '6pm', Thursday: '6pm', Friday: '6pm', Saturday: '6pm' },
         message: 'hi',
-        deals: ['1', '2', '3', '4', '5'],
+        deals: {
+          Sunday: ['1', '2', '3', '4', '5'],
+          Monday: ['1', '2', '3', '4', '5'],
+          Tuesday: ['1', '2', '3', '4', '5'],
+          Wednesday: ['1', '2', '3', '4', '5'],
+          Thursday: ['1', '2', '3', '4', '5'],
+          Friday: ['1', '2', '3', '4', '5'],
+          Saturday: ['1', '2', '3', '4', '5']
+        },
         owner_email: 'Bob122421@gmail.com'
       )
     end
