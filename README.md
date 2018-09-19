@@ -1,6 +1,11 @@
 # BarHopBuddy
 
 BarHopBuddy is an application that aims to help bar seeking patrons find the best happy hour deals around their location.  You simply log in, utilizing your Google account, and select the happy hour deals that interest you.  A map is then created showing your current location, along with the locations of all the bars you selected, limited to a half mile radius.  In addition, this application seeks to help bars improve their happy hour foot traffic by providing analytics showing their bar's performance in the app, allowing the bar to change their happy hour deals in to increase overall sales.
+
+## Navigating the App  
+The splash page will automatically redirect you to Google's OAuth server.  
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -18,7 +23,7 @@ git clone https://github.com/JPLynch35/bar_hop_buddy.git
 Inside the project directory, prepare the gems for development with bundler.  
 ```
 bundle install
-```
+``` 
 
 ## Running the tests
 
