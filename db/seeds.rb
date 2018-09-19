@@ -1,8 +1,8 @@
 # Bars
-NAMES = ['Sisters Bar', "1DOWN", 'Oskar Greens', 'Truth Brewery', 'World of Freshcraft', 'Thirsty Lamb', 'Stan-Lee Beer House', 'Standing Rock Tap House']
-ADDRESS = ['1920 Market St, Denver, CO', '1925 Blake St, Denver, CO', '1624 Market St, Denver, CO', '7101 East Colfax Ave, Denver, CO', '1530 Blake St, Denver, CO', '1605 Wynkoop St, Denver, CO', '2501 Dallas St, Aurora, CO', '1919 Blake St, Denver, CO']
-LONGITUDE = ['-104.994192', '-104.994983', '-104.997508', '-104.905731', '-104.999540', '-105.0007', '-104.878220', '-104.99541']
-LATITUDE = ['39.753057', '39.753782', '39.750111', '39.740381', '39.749920', '39.752753', '39.752620', '39.753878']
+NAMES = ['Sisters Bar', "1DOWN", 'Oskar Greens', 'Truth Brewery', 'World of Freshcraft', 'Thirsty Lamb', 'Stan-Lee Beer House', 'Standing Rock Tap House', 'Denver Yoohoo Market', 'Legal Petes', 'Black Sushi Sake Grill', 'Fast Forward Lounge', 'Tavern Uptown', 'Fallar Bar', 'The Finger Denver']
+ADDRESS = ['1920 Market St, Denver, CO', '1925 Blake St, Denver, CO', '1624 Market St, Denver, CO', '7101 East Colfax Ave, Denver, CO', '1530 Blake St, Denver, CO', '1605 Wynkoop St, Denver, CO', '2501 Dallas St, Aurora, CO', '1919 Blake St, Denver, CO', 'Jackdaughters Denver', '1520 20th St, Denver, CO', '1800 Wazee St, Denver, CO', '1530 16th St Mall, Denver, CO 80202', '1616 16th St Mall, Denver, CO 80202', '1515 Market St, Denver, CO', '1949 Market St, Denver, CO', '8001 E Colfax Ave, Denver, CO', '1672 Lawrence St, Denver, CO']
+LONGITUDE = ['-104.994192', '-104.994983', '-104.997508', '-104.905731', '-104.999540', '-105.0007', '-104.878220', '-104.99541', '-104.99516', '-104.99702', '-105.00009', '-105.00047', '-104.99943', '-104.99401', '-104.89487', '-104.9959']
+LATITUDE = ['39.753057', '39.753782', '39.750111', '39.740381', '39.749920', '39.752753', '39.752620', '39.753878', '39.754467', '39.753371', '39.750831', '39.751335', '39.749453', '39.753583', '39.740361', '39.749153']
 OPEN = { Sunday: '8am', Monday: '10am', Tuesday: '10am', Wednesday: '10am', Thursday: '10am', Friday: '10am', Saturday: '8am' }
 CLOSE = { Sunday: '10pm', Monday: '12am', Tuesday: '12am', Wednesday: '12am', Thursday: '12am', Friday: '2am', Saturday: '2am' }
 HHSTART = { Sunday: '8am', Monday: '4pm', Tuesday: '4pm', Wednesday: '4pm', Thursday: '4pm', Friday: '4pm', Saturday: '4pm' }
