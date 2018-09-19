@@ -43061,7 +43061,7 @@ body.pushable > .pusher {
 /* line 19, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 body, html {
   height: 100%;
-  background-color: #bec6cf;
+  background: #c9d2d7;
 }
 
 /* line 24, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
@@ -43070,6 +43070,26 @@ h1 {
 }
 
 /* line 28, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+article {
+  display: inline-table;
+}
+
+/* line 32, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+label {
+  margin-right: 6px;
+}
+
+/* line 36, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.ui.form textarea {
+  background-color: #6699cc;
+}
+
+/* line 40, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.ui.input input {
+  background-color: #6699cc;
+}
+
+/* line 44, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .bg {
   background-image: url("table-beers.jpg");
   height: 100%;
@@ -43078,7 +43098,7 @@ h1 {
   background-size: cover;
 }
 
-/* line 36, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 52, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .splash-app-name {
   color: white;
   display: flex;
@@ -43087,55 +43107,62 @@ h1 {
   padding-top: 40px;
 }
 
-/* line 44, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 60, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .reset-margin {
   margin-top: 0px;
 }
 
-/* line 48, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 64, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .title {
   font-size: 80px;
   font-family: Rubik;
 }
 
-/* line 53, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 69, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.edit-title {
+  font-size: 40px;
+  font-family: Rubik;
+  margin-top: 14px;
+}
+
+/* line 75, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .left-pad {
   padding-left: 16px;
 }
 
-/* line 57, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 79, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .flex-row-r {
   display: flex;
   flex-direction: row-reverse;
 }
 
-/* line 62, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 84, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .flex-col {
   display: flex;
   flex-direction: column;
   align-self: center;
 }
 
-/* line 68, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 90, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .flex-row-center {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-/* line 74, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 96, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .nav-app-name {
   font-family: Rubik;
   color: white;
   font-size: 40px;
 }
 
-/* line 80, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 102, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .nav-image {
   margin-top: 6px;
 }
 
-/* line 84, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 106, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.button {
   background-color: white;
   color: black;
@@ -43143,90 +43170,226 @@ h1 {
   font-weight: 100;
 }
 
-/* line 91, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 113, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.button.logout {
   background-color: white;
   color: black;
   font-family: Rubik;
   font-weight: 100;
+  margin-left: 20px;
 }
 
-/* line 98, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 121, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .card-buttons {
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-top: 10px;
-  margin-top: 10px;
+  margin-left: 55px;
+  margin-right: 55px;
+  margin-top: 20px;
 }
 
-/* line 105, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 127, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.menu {
   background-color: #687c92;
 }
 
-/* line 109, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 131, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .rubik-thin {
   font-family: Rubik;
   font-weight: 100;
   font-size: 18px;
 }
 
-/* line 115, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 137, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.card-holder {
+  position: relative;
+}
+
+/* line 141, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .bar-card {
   min-width: 500px;
-  min-height: 575px;
+  min-height: 600px;
   background-color: white;
   border-style: solid;
   border-width: 1px;
   border-color: #202020;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 30px;
-  position: relative;
+  position: absolute;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 26px auto 0;
-  z-index: 0;
+  z-index: 1;
 }
 
-/* line 131, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
-.bar-card:before, .bar-card:after {
+/* line 157, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.bar-card-after {
+  width: 500px;
+  height: 600px;
   content: "";
-  z-index: -1;
-  height: 98%;
-  position: absolute;
-  width: 100%;
+  background: #fafafa;
   border-style: solid;
   border-width: 1px;
   border-color: #202020;
   border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  right: -7px;
+  top: 10px;
+  transform: rotate(0.4deg);
 }
 
-/* line 142, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
-.bar-card:before {
-  background: #fafafa;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+/* line 174, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.bar-card-after:before {
+  width: 100%;
+  height: 98%;
+  content: "";
+  background: #f6f6f6;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #202020;
+  border-radius: 10px;
+  position: absolute;
   left: -5px;
   top: 4px;
   transform: rotate(-2.5deg);
 }
 
-/* line 149, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
-.bar-card:after {
+/* line 189, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.bar-card-after:after {
+  width: 100%;
+  height: 98%;
+  content: "";
   background: #f6f6f6;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  right: -3px;
-  top: 1px;
-  transform: rotate(0.4deg);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #202020;
+  border-radius: 10px;
+  position: absolute;
+  left: -5px;
+  top: 30px;
+  transform: rotate(2.5deg);
 }
 
-/* line 157, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 204, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.instant {
+  -webkit-transition: transform 0s;
+  transition: transform 0s;
+}
+
+/* line 209, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.rotate-left {
+  -webkit-transform: rotate(-360deg);
+  transform: rotate(-360deg);
+  transition: transform 0.3s linear;
+}
+
+/* line 215, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.rotate-right {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  transition: transform 0.3s linear;
+}
+
+/* line 221, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.shift-left {
+  -webkit-transform: translate(-400%);
+  transform: translateX(-400%);
+  transition: transform 0.3s linear;
+}
+
+/* line 227, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.shift-right {
+  -webkit-transform: translate(400%);
+  transform: translateX(400%);
+  transition: transform 0.3s linear;
+}
+
+/* line 233, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.mapboxgl-popup {
+  justify-content: center;
+  max-width: 200px;
+  max-height: 400px;
+  font-size: 11px;
+  font-family: Rubik;
+  line-height: 150%;
+  border-radius: 5px;
+}
+
+/* line 243, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.line-break {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+/* line 249, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.edit-days {
+  height: 250px;
+  width: 100%;
+  padding: 16px;
+}
+
+/* line 255, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.day-and-chart {
+  height: 100%;
+  width: 200px;
+}
+
+/* line 260, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.chart-container {
+  position: relative;
+  height: 100px;
+  width: 200px;
+  margin-top: 30px;
+}
+
+/* line 267, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.vert-fields {
+  display: block;
+  text-align: center;
+  width: 300px;
+}
+
+/* line 273, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.input-fields {
+  text-align: right;
+}
+
+/* line 277, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.bar-edit-submit {
+  margin-left: 16px;
+  display: inline;
+}
+
+/* line 282, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.ui.floating.message {
+  margin-top: 0px;
+  text-align: center;
+}
+
+/* line 287, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.inline {
+  display: inline-flex;
+}
+
+/* line 291, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.ui.borderless.menu.grid {
+  margin-bottom: 0px;
+}
+
+/* line 295, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+.right-margin {
+  margin-right: 44px;
+}
+
+/* line 299, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #dc-name {
   margin-bottom: 15px;
   font-weight: bold;
   font-size: 24px;
 }
 
-/* line 163, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 305, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #dc-address,
 #dc-hours,
 #dc-hh_hours,
@@ -43234,13 +43397,13 @@ h1 {
   line-height: 5px;
 }
 
-/* line 170, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 312, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #dc-deals1 {
   margin-top: 40px;
   font-weight: bold;
 }
 
-/* line 175, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 317, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #dc-deals2,
 #dc-deals3,
 #dc-deals4,
@@ -43249,20 +43412,31 @@ h1 {
   font-weight: bold;
 }
 
-/* line 183, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
-#location {
-  margin-top: 10px;
+/* line 325, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#location-text {
+  min-height: 30px;
+}
+
+/* line 329, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#location-text {
+  margin-top: 14px;
   font-style: italic;
 }
 
-/* line 189, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 334, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#location-image {
+  margin-top: 6px;
+}
+
+/* line 338, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #horizontal-line {
+  margin-top: 35px;
   width: 100%;
   height: 2px;
   background-color: black;
 }
 
-/* line 195, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 345, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #vertical-line {
   margin-top: 10px;
   height: 115px;
@@ -43270,8 +43444,18 @@ h1 {
   background-color: black;
 }
 
-/* line 202, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 352, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 #map {
+  margin-top: 15px;
   width: 1000px;
   height: 600px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #202020;
+  border-radius: 10px;
+}
+
+/* line 362, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#deal-fields {
+  display: inline-grid;
 }
