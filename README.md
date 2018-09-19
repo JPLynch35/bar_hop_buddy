@@ -1,10 +1,13 @@
 # BarHopBuddy
 
-BarHopBuddy is an application that aims to help bar seeking patrons find the best happy hour deals around their location.  You simply log in, utilizing your Google account, and select the happy hour deals that interest you.  A map is then created showing your current location, along with the locations of all the bars you selected, limited to a half mile radius.  In addition, this application seeks to help bars improve their happy hour foot traffic by providing analytics showing their bar's performance in the app, allowing the bar to change their happy hour deals in to increase overall sales.
+BarHopBuddy is a proof on ceoncept application that aims to help bar seeking patrons find the best happy hour deals around their location.  You simply log in, utilizing your Google account, and select the happy hour deals that interest you.  A map is then created showing your current location, along with the locations of all the bars you selected, limited to a half mile radius.  In addition, this application seeks to help bars improve their happy hour foot traffic by providing analytics showing their bar's performance in the app, allowing the bar to change their happy hour deals in order to increase overall sales.  The application will require a monthly cost for bars, and is free to use for patrons.
 
 ## Navigating the App  
-The splash page will automatically redirect you to Google's OAuth server.  
+The splash page will automatically redirect you to Google's OAuth server after 3 seconds.  
 <img width="1440" alt="screen shot 2018-09-18 at 8 52 57 pm" src="https://user-images.githubusercontent.com/32905782/45728547-a484a100-bb85-11e8-9ae9-197c22bf1a22.png">
+
+Once on the deals page, your location will be found utilizing HTML5 geolocation.  This location will be shown on above the happy hour cards after it is retrieved.  After this is completed, it will show the happy hour cards for bars participating in the app.  Each bar can post a personal message and up to 5 happy hour deals.  THe user then selects 'yes' or 'no' on the card, shown as a checkmark and an X. Once complete, the user then selects 'Find Your Bars' to go to the map page.
+
 
 ## Getting Started
 
