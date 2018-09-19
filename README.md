@@ -13,7 +13,7 @@ Once complete, the user then selects 'Find Your Bars' to go to the map page. Thi
 <img width="1440" alt="screen shot 2018-09-18 at 8 53 20 pm" src="https://user-images.githubusercontent.com/32905782/45728805-e4985380-bb86-11e8-93a1-84ae80a54478.png">
 
 As a bar owner, associated with your registered bar via a Google email, you can view your bar edit page (by clicking on 'Edit Your Bar').  This page allows you to edit your hours, message and daily deals that are shown to app users.  In addition, this page provides charts showing the overall choices made for each previous day of the week by app users for your bar.  This can be used to help guide happy hour deals to maximize profits.
-
+<img width="1440" alt="screen shot 2018-09-18 at 8 53 29 pm" src="https://user-images.githubusercontent.com/32905782/45728947-815af100-bb87-11e8-871e-869425472129.png">
 
 ## Getting Started
 
