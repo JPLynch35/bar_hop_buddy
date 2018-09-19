@@ -4,7 +4,7 @@ BarHopBuddy is an application that aims to help bar seeking patrons find the bes
 
 ## Navigating the App  
 The splash page will automatically redirect you to Google's OAuth server.  
-
+<img width="1440" alt="screen shot 2018-09-18 at 8 52 57 pm" src="https://user-images.githubusercontent.com/32905782/45728547-a484a100-bb85-11e8-9ae9-197c22bf1a22.png">
 
 ## Getting Started
 
