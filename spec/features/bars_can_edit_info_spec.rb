@@ -23,7 +23,15 @@ describe 'a user' do
         hh_start: hhstart,
         hh_end: hhend,
         message: message.sample,
-        deals: deals.sample(5),
+        deals: {
+          Sunday: deals.sample(5),
+          Monday: deals.sample(5),
+          Tuesday: deals.sample(5),
+          Wednesday: deals.sample(5),
+          Thursday: deals.sample(5),
+          Friday: deals.sample(5),
+          Saturday: deals.sample(5)
+        },
         owner_email:  if i == 0
                         'JPLynch35@gmail.com'
                       else
