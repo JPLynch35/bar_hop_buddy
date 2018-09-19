@@ -18,10 +18,6 @@ class MapBoxService
   private
   attr_reader :long, :lat
   
-  def get_png(url)
-    conn.get(url).body
-  end
-
   def get_json(url)
     JSON.parse(conn.get(url).body, symbolize_names: true)
   end
