@@ -33,11 +33,11 @@
   }
 
   .ui.form textarea {
-    background-color: #6699cc;
+    background-color: #F5F5F5;
   }
 
   .ui.input input {
-    background-color: #6699cc;
+    background-color: #F5F5F5;
   }
  
   .bg { 
@@ -108,13 +108,9 @@
     font-family: Rubik;
     font-weight: 100;
   }
-  
-  .ui.button.logout {
-    background-color: white;
-    color: black;
-    font-family: Rubik;
-    font-weight: 100;
-    margin-left: 20px;
+
+  .ui.button:hover {
+    background-color: #F5F5F5;
   }
   
   .card-buttons {
@@ -293,6 +289,10 @@
 
   .right-margin {
     margin-right: 44px;
+  }
+
+  #logout {
+    margin-left: 20px;
   }
 
   #dc-name {
