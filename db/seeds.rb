@@ -7,8 +7,8 @@ OPEN = { Sunday: '8am', Monday: '10am', Tuesday: '10am', Wednesday: '10am', Thur
 CLOSE = { Sunday: '10pm', Monday: '12am', Tuesday: '12am', Wednesday: '12am', Thursday: '12am', Friday: '2am', Saturday: '2am' }
 HHSTART = { Sunday: '8am', Monday: '4pm', Tuesday: '4pm', Wednesday: '4pm', Thursday: '4pm', Friday: '4pm', Saturday: '4pm' }
 HHEND = { Sunday: '10pm', Monday: '6pm', Tuesday: '6pm', Wednesday: '6pm', Thursday: '6pm', Friday: '6pm', Saturday: '6pm' }
-MESSAGE = ['Come on our September 26nd for karaoke!', 'Free games on September 15th!', 'Live music on September 19th!', 'Beer slushies!']
-DEALS = ['$1 off all drafts', 'All beers half off', 'All 40s $5', 'Fireball shots $4', 'Half price tequila shots', 'LIT pitchers $5', '$2 PBR', '$2 Bud Light Drafts', '$4 Mojitos', '$15 Lagunitas buckets', '$3 domestic drafts', '$3 wells', '$5 margaritas']
+MESSAGE = ['Come on out September 26nd for karaoke!', 'Free games on September 15th!', 'Live music on September 19th!', 'Beer slushies!']
+DEALS = ['$1 off all drafts', 'All beers half off', 'All 40s $5', 'Fireball shots $4', 'Half price tequila shots', 'LIT pitchers $5', '$2 PBR', '$2 Bud Light Drafts', '$4 Mojitos', '$15 Lagunitas buckets', '$3 domestic drafts', '$3 wells', '$5 margaritas', '$8 PBR Buckets', '$1 Mystery Beer']
 NAMES.each_with_index do |bar_name, i|
   Bar.create(
     name: bar_name,
@@ -20,7 +20,15 @@ NAMES.each_with_index do |bar_name, i|
     hh_start: HHSTART,
     hh_end: HHEND,
     message: MESSAGE.sample,
-    deals: DEALS.sample(5),
+    deals: {
+      Sunday: DEALS.sample(5),
+      Monday: DEALS.sample(5),
+      Tuesday: DEALS.sample(5),
+      Wednesday: DEALS.sample(5),
+      Thursday: DEALS.sample(5),
+      Friday: DEALS.sample(5),
+      Saturday: DEALS.sample(5)
+    },
     owner_email:  if i == 0
                       'JPLynch35@gmail.com'
                   else
@@ -30,7 +38,7 @@ NAMES.each_with_index do |bar_name, i|
 end
 
 # Users
-(1..50).to_a.each do |num|
+(1..100).to_a.each do |num|
   User.create(uid: num.to_s, email: num.to_s + '@gmail.com')
 end
 
@@ -42,7 +50,7 @@ created = [
   DateTime.now-4.days,
   DateTime.now-5.days,
   DateTime.now-6.days,
-  DateTime.now-7.days,
+  DateTime.now-7.days
 ]
 click = [true, false]
 User.all.each do |user|

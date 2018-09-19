@@ -1,12 +1,96 @@
 <h1 class="flex-row-center edit-title"><%= @presenter.bar.name %></h1>
 <p class="flex-row-center rubik-thin"><%= @presenter.bar.address %></p>
+<div class="flex-row-center">
+  <%= form_for @presenter.bar do |f| %>
+    <article class="input-fields">
+      <div class="ui form inline right-margin">
+          <%= f.label :message %>
+          <%= f.text_area :message, class: "input-color", cols: 30, rows: 5 %>
+      </div>
+    </article>
+    <%= f.submit "Update Message", class: "ui button bar-edit-submit" %>
+  <% end %>
+</div>
+</br>
 <main>
   <% ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].each do |day| %>
-    <div id="<%= day %>">
-      <canvas class="all-charts", id="<%= day.downcase %>Chart"></canvas> 
+    <div class="line-break"></div>
+    <div class="edit-days", id="<%= day %>">
+      <article class="day-and-chart">
+        <h1 class="rubik-thin"><%= day %></h1>
+        <div class="chart-container">
+          <canvas id="<%= day.downcase %>Chart"></canvas> 
+        </div>
+      </article>
+      <article>
+        <%= form_for @presenter.bar do |f| %>
+          <article class="input-fields">
+            <div class="vert-fields">
+              <div class="ui input">
+                <%= f.label :open %>
+                <%= f.fields_for :open, OpenStruct.new(@presenter.bar.open) do |ff| %>
+                  <% ff.text_field day %>
+                <% end %>
+              </div>
+              </br>
+              </br>
+              <div class="ui input">
+                <%= f.label :close %>
+                <%= f.fields_for :close, OpenStruct.new(@presenter.bar.close) do |ff| %>
+                  <% ff.text_field day %>
+                <% end %>
+              </div>
+            </div>
+          </article>
+          <article class="input-fields">
+            <div class="vert-fields">
+              <div class="ui input">
+                <%= f.label :Happy_hour_start %>
+                <%= f.fields_for :hh_start, OpenStruct.new(@presenter.bar.hh_start) do |ff| %>
+                  <% ff.text_field day %>
+                <% end %>
+              </div>
+              </br>
+              </br>
+              <div class="ui input">
+                <%= f.label :Happy_hour_end %>
+                <%= f.fields_for :hh_end, OpenStruct.new(@presenter.bar.hh_end) do |ff| %>
+                  <% ff.text_field day %>
+                <% end %>
+              </div>
+            </div>
+          </article>
+          <article class="input-fields">
+            <div class="vert-fields">
+              <%= f.label :deals %>
+              <div class="ui input", id="deal-fields">
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :first %>
+                <% end %>
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :second %>
+                <% end %>
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :third %>
+                <% end %>
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :fourth %>
+                <% end %>
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :fifth %>
+                <% end %>
+              </div>
+            </div>
+          </article>
+          <div class="vert-fields bar-edit-submit">
+            <%= f.submit "Update #{day}", class: "ui button" %>
+          </div>
+        <% end %>
+      </article>
     </div>
   <% end %>
 </main>
+
 
 <script>
   var sun_ctx = document.getElementById("sundayChart");
@@ -14,97 +98,102 @@
       type: 'doughnut',
       data: { 
         datasets: [{
-          data: <%= @presenter.day_choices('Sunday') %>
+          data: <%= @presenter.day_choices('Sunday') %>,
+          backgroundColor: [
+            'rgba(122, 40, 42, 1)',
+            'rgba(169, 179, 100, 1)'
+          ],
         }],
-        labels: [
-          'Positive',
-          'Negative',
-        ]
       },
-      options: Chart.defaults.doughnut
+      options: Chart.defaults.doughnut.tooltips.enabled = false
   });
   var mon_ctx = document.getElementById("mondayChart");
   var mondayChart = new Chart(mon_ctx, {
       type: 'doughnut',
       data: { 
         datasets: [{
-          data: <%= @presenter.day_choices('Monday') %>
+          data: <%= @presenter.day_choices('Monday') %>,
+          backgroundColor: [
+            'rgba(122, 40, 42, 1)',
+            'rgba(169, 179, 100, 1)'
+          ],
         }],
-        labels: [
-          'Positive',
-          'Negative',
-        ]
       },
-      options: Chart.defaults.doughnut
+      options: Chart.defaults.doughnut.tooltips.enabled = false
   });
   var tues_ctx = document.getElementById("tuesdayChart");
   var tuesdayChart = new Chart(tues_ctx, {
       type: 'doughnut',
       data: { 
         datasets: [{
-          data: <%= @presenter.day_choices('Tuesday') %>
+          data: <%= @presenter.day_choices('Tuesday') %>,
+          backgroundColor: [
+            'rgba(122, 40, 42, 1)',
+            'rgba(169, 179, 100, 1)'
+          ],
         }],
-        labels: [
-          'Positive',
-          'Negative',
-        ]
       },
-      options: Chart.defaults.doughnut
+      options: Chart.defaults.doughnut.tooltips.enabled = false
   });
   var weds_ctx = document.getElementById("wednesdayChart");
   var wednesdayChart = new Chart(weds_ctx, {
       type: 'doughnut',
       data: { 
         datasets: [{
-          data: <%= @presenter.day_choices('Wednesday') %>
+          data: <%= @presenter.day_choices('Wednesday') %>,
+          backgroundColor: [
+            'rgba(122, 40, 42, 1)',
+            'rgba(169, 179, 100, 1)'
+          ],
         }],
-        labels: [
-          'Positive',
-          'Negative',
-        ]
       },
-      options: Chart.defaults.doughnut
+      options: Chart.defaults.doughnut.tooltips.enabled = false
   });
   var thurs_ctx = document.getElementById("thursdayChart");
   var thursdayChart = new Chart(thurs_ctx, {
       type: 'doughnut',
       data: { 
         datasets: [{
-          data: <%= @presenter.day_choices('Thursday') %>
+          data: <%= @presenter.day_choices('Thursday') %>,
+          backgroundColor: [
+            'rgba(122, 40, 42, 1)',
+            'rgba(169, 179, 100, 1)'
+          ],
         }],
-        labels: [
-          'Positive',
-          'Negative',
-        ]
       },
-      options: Chart.defaults.doughnut
+      options: Chart.defaults.doughnut.tooltips.enabled = false
   });
   var fri_ctx = document.getElementById("fridayChart");
   var fridayChart = new Chart(fri_ctx, {
       type: 'doughnut',
       data: { 
         datasets: [{
-          data: <%= @presenter.day_choices('Friday') %>
+          data: <%= @presenter.day_choices('Friday') %>,
+          backgroundColor: [
+            'rgba(122, 40, 42, 1)',
+            'rgba(169, 179, 100, 1)'
+          ],
         }],
-        labels: [
-          'Positive',
-          'Negative',
-        ]
       },
-      options: Chart.defaults.doughnut
+      options: Chart.defaults.doughnut.tooltips.enabled = false
   });
   var sat_ctx = document.getElementById("saturdayChart");
   var saturdayChart = new Chart(sat_ctx, {
       type: 'doughnut',
       data: { 
         datasets: [{
-          data: <%= @presenter.day_choices('Saturday') %>
+          data: <%= @presenter.day_choices('Saturday') %>,
+          backgroundColor: [
+            'rgba(122, 40, 42, 1)',
+            'rgba(169, 179, 100, 1)'
+          ],
         }],
-        labels: [
-          'Positive',
-          'Negative',
-        ]
       },
-      options: Chart.defaults.doughnut
+      options: Chart.defaults.doughnut.tooltips.enabled = false
   });
+  $(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').remove();
+  }, 4000);
+ })
 </script>
