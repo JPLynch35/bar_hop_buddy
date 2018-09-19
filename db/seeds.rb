@@ -44,7 +44,6 @@ end
 
 #Choices and UserBars
 created = [
-  DateTime.now,
   DateTime.now-1.days,
   DateTime.now-2.days,
   DateTime.now-3.days,

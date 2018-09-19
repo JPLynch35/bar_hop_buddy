@@ -14,6 +14,7 @@ class BarsController < ApplicationController
       @bar.close[bar_params.values[1].keys.first.to_sym] = [bar_params.values[1].values.first]
       @bar.hh_start[bar_params.values[2].keys.first.to_sym] = [bar_params.values[2].values.first]
       @bar.hh_end[bar_params.values[3].keys.first.to_sym] = [bar_params.values[3].values.first]
+      @bar.deals[bar_params.values[0].keys.first] = new_hh_deals
     end
     if @bar.save
       flash[:successs] = @bar.name + " successfully updated."
@@ -25,10 +26,20 @@ class BarsController < ApplicationController
 
   private
   def bar_params
-    params.require(:bar).permit(:message, open: days_of_week, close: days_of_week, hh_start: days_of_week, hh_end: days_of_week, deals: days_of_week)
+    params.require(:bar).permit(:message, open: days_of_week, close: days_of_week, hh_start: days_of_week, hh_end: days_of_week, deals: hh_keys)
   end
 
   def days_of_week
     [:Sunday, :Monday, :Tuesday, :Wednesday, :Thursday, :Friday, :Saturday]
+  end
+
+  def hh_keys
+    [:first, :second, :third, :fourth, :fifth]
+  end
+
+  def new_hh_deals
+    hh_keys.map do |deal|
+      bar_params[:deals][deal]      
+    end
   end
 end

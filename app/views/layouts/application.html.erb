@@ -44,7 +44,7 @@
       </nav>
     <% end %>
       <% flash.each do |type, message| %>
-        <div class="ui floating message rubik-thin">
+        <div class="ui floating message rubik-thin", id="flash">
           <%= content_tag :div, message.html_safe, class: type %>
         </div>
       <% end %>

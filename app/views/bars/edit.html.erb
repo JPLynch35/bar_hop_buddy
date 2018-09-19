@@ -5,10 +5,10 @@
     <article class="input-fields">
       <div class="ui form inline right-margin">
           <%= f.label :message %>
-          <%= f.text_area :message, cols: 30, rows: 5 %>
+          <%= f.text_area :message, class: "input-color", cols: 30, rows: 5 %>
       </div>
     </article>
-    <%= f.submit "Update Message", class: "bar-edit-submit" %>
+    <%= f.submit "Update Message", class: "ui button bar-edit-submit" %>
   <% end %>
 </div>
 </br>
@@ -29,7 +29,7 @@
               <div class="ui input">
                 <%= f.label :open %>
                 <%= f.fields_for :open, OpenStruct.new(@presenter.bar.open) do |ff| %>
-                  <% ff.text_field :"#{day}" %>
+                  <% ff.text_field day %>
                 <% end %>
               </div>
               </br>
@@ -37,7 +37,7 @@
               <div class="ui input">
                 <%= f.label :close %>
                 <%= f.fields_for :close, OpenStruct.new(@presenter.bar.close) do |ff| %>
-                  <% ff.text_field :"#{day}" %>
+                  <% ff.text_field day %>
                 <% end %>
               </div>
             </div>
@@ -45,31 +45,45 @@
           <article class="input-fields">
             <div class="vert-fields">
               <div class="ui input">
-                <%= f.label :happy_hour_start %>
+                <%= f.label :Happy_hour_start %>
                 <%= f.fields_for :hh_start, OpenStruct.new(@presenter.bar.hh_start) do |ff| %>
-                  <% ff.text_field :"#{day}" %>
+                  <% ff.text_field day %>
                 <% end %>
               </div>
               </br>
               </br>
               <div class="ui input">
-                <%= f.label :happy_hour_end %>
+                <%= f.label :Happy_hour_end %>
                 <%= f.fields_for :hh_end, OpenStruct.new(@presenter.bar.hh_end) do |ff| %>
-                  <% ff.text_field :"#{day}" %>
+                  <% ff.text_field day %>
                 <% end %>
               </div>
             </div>
           </article>
           <article class="input-fields">
             <div class="vert-fields">
-              <div class="ui input">
-                <%= f.label :deals %>
-                <%= f.text_field "deals" %>
+              <%= f.label :deals %>
+              <div class="ui input", id="deal-fields">
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :first %>
+                <% end %>
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :second %>
+                <% end %>
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :third %>
+                <% end %>
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :fourth %>
+                <% end %>
+                <%= f.fields_for :deals, OpenStruct.new(@presenter.bar.deals)[day] do |ff| %>
+                  <% ff.text_field :fifth %>
+                <% end %>
               </div>
             </div>
           </article>
           <div class="vert-fields bar-edit-submit">
-            <%= f.submit "Update #{day}" %>
+            <%= f.submit "Update #{day}", class: "ui button" %>
           </div>
         <% end %>
       </article>
@@ -177,4 +191,9 @@
       },
       options: Chart.defaults.doughnut.tooltips.enabled = false
   });
+  $(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').remove();
+  }, 4000);
+ })
 </script>
