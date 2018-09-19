@@ -1,6 +1,6 @@
 # BarHopBuddy
 
-BarHopBuddy is a proof on ceoncept application that aims to help bar seeking patrons find the best happy hour deals around their location.  You simply log in, utilizing your Google account, and select the happy hour deals that interest you.  A map is then created showing your current location, along with the locations of all the bars you selected, limited to a half mile radius.  In addition, this application seeks to help bars improve their happy hour foot traffic by providing analytics showing their bar's performance in the app, allowing the bar to change their happy hour deals in order to increase overall sales.  The application will require a monthly cost for bars, and is free to use for patrons.
+BarHopBuddy is a proof on concept application that aims to help bar seeking patrons find the best happy hour deals around their location.  You simply log in, utilizing your Google account, and select the happy hour deals that interest you.  A map is then created showing your current location, along with the locations of all the bars you selected, limited to a half mile radius.  In addition, this application seeks to help bars improve their happy hour foot traffic by providing analytics showing their bar's performance in the app, allowing the bar to change their happy hour deals in order to increase overall sales.  The application will require a monthly cost for bars, and is free to use for patrons.
 
 ## Navigating the App  
 The splash page will automatically redirect you to Google's OAuth server after 3 seconds.  
