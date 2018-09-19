@@ -43081,12 +43081,12 @@ label {
 
 /* line 36, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.form textarea {
-  background-color: #6699cc;
+  background-color: #F5F5F5;
 }
 
 /* line 40, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.input input {
-  background-color: #6699cc;
+  background-color: #F5F5F5;
 }
 
 /* line 44, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
@@ -43171,39 +43171,35 @@ label {
 }
 
 /* line 113, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
-.ui.button.logout {
-  background-color: white;
-  color: black;
-  font-family: Rubik;
-  font-weight: 100;
-  margin-left: 20px;
+.ui.button:hover {
+  background-color: #F5F5F5;
 }
 
-/* line 121, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 117, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .card-buttons {
   margin-left: 55px;
   margin-right: 55px;
   margin-top: 20px;
 }
 
-/* line 127, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 123, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.menu {
   background-color: #687c92;
 }
 
-/* line 131, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 127, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .rubik-thin {
   font-family: Rubik;
   font-weight: 100;
   font-size: 18px;
 }
 
-/* line 137, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 133, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .card-holder {
   position: relative;
 }
 
-/* line 141, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 137, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .bar-card {
   min-width: 500px;
   min-height: 600px;
@@ -43220,7 +43216,7 @@ label {
   z-index: 1;
 }
 
-/* line 157, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 153, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .bar-card-after {
   width: 500px;
   height: 600px;
@@ -43238,7 +43234,7 @@ label {
   transform: rotate(0.4deg);
 }
 
-/* line 174, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 170, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .bar-card-after:before {
   width: 100%;
   height: 98%;
@@ -43254,7 +43250,7 @@ label {
   transform: rotate(-2.5deg);
 }
 
-/* line 189, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 185, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .bar-card-after:after {
   width: 100%;
   height: 98%;
@@ -43270,41 +43266,41 @@ label {
   transform: rotate(2.5deg);
 }
 
-/* line 204, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 200, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .instant {
   -webkit-transition: transform 0s;
   transition: transform 0s;
 }
 
-/* line 209, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 205, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .rotate-left {
   -webkit-transform: rotate(-360deg);
   transform: rotate(-360deg);
   transition: transform 0.3s linear;
 }
 
-/* line 215, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 211, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .rotate-right {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
   transition: transform 0.3s linear;
 }
 
-/* line 221, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 217, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .shift-left {
   -webkit-transform: translate(-400%);
   transform: translateX(-400%);
   transition: transform 0.3s linear;
 }
 
-/* line 227, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 223, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .shift-right {
   -webkit-transform: translate(400%);
   transform: translateX(400%);
   transition: transform 0.3s linear;
 }
 
-/* line 233, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 229, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .mapboxgl-popup {
   justify-content: center;
   max-width: 200px;
@@ -43315,27 +43311,27 @@ label {
   border-radius: 5px;
 }
 
-/* line 243, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 239, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .line-break {
   width: 100%;
   height: 1px;
   background-color: black;
 }
 
-/* line 249, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 245, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .edit-days {
   height: 250px;
   width: 100%;
   padding: 16px;
 }
 
-/* line 255, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 251, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .day-and-chart {
   height: 100%;
   width: 200px;
 }
 
-/* line 260, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 256, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .chart-container {
   position: relative;
   height: 100px;
@@ -43343,43 +43339,48 @@ label {
   margin-top: 30px;
 }
 
-/* line 267, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 263, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .vert-fields {
   display: block;
   text-align: center;
   width: 300px;
 }
 
-/* line 273, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 269, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .input-fields {
   text-align: right;
 }
 
-/* line 277, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 273, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .bar-edit-submit {
   margin-left: 16px;
   display: inline;
 }
 
-/* line 282, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 278, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.floating.message {
   margin-top: 0px;
   text-align: center;
 }
 
-/* line 287, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 283, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .inline {
   display: inline-flex;
 }
 
-/* line 291, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 287, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .ui.borderless.menu.grid {
   margin-bottom: 0px;
 }
 
-/* line 295, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+/* line 291, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
 .right-margin {
   margin-right: 44px;
+}
+
+/* line 295, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
+#logout {
+  margin-left: 20px;
 }
 
 /* line 299, /Users/jp/turing/3module/projects/bar_hop_buddy/app/assets/stylesheets/application.css.scss */
