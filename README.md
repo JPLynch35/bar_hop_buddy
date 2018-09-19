@@ -50,7 +50,7 @@ rspec
 * OmniAuth Google OAuth2- Logging in utilizing a Google account
 * MapBox- API for reverse geolocation and creating maps
 * Chart.js- API for creating charts
-* NewRelic- Performance analytics
+* NewRelic- Performance analytics (removed due to Heroku memory issues)
 
 ## Authors
 
