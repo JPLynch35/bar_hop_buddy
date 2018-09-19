@@ -9,7 +9,7 @@ The splash page will automatically redirect you to Google's OAuth server after 3
 Once on the deals page, your location will be found utilizing HTML5 geolocation.  This location is shown above the happy hour cards once it is retrieved.  After this is completed, it will show the happy hour cards for bars participating in the app.  Each bar can post a personal message and up to 5 happy hour deals.  The user then selects 'yes' or 'no' on the card, shown as a checkmark and an X. 
 <img width="1440" alt="screen shot 2018-09-18 at 8 53 04 pm" src="https://user-images.githubusercontent.com/32905782/45728763-b3b81e80-bb86-11e8-964f-b744ad3a0c19.png">
 
-Once complete, the user then selects 'Find Your Bars' to go to the map page. This map allows the user to see the bars they have selected, and each icon can be clicked on to show the bar information.
+Once complete, the user then selects 'Find Your Bars' to go to the map page. This map allows the user to see the bars they have selected, and each icon can be clicked to show the bar information.
 <img width="1440" alt="screen shot 2018-09-18 at 8 53 20 pm" src="https://user-images.githubusercontent.com/32905782/45728805-e4985380-bb86-11e8-93a1-84ae80a54478.png">
 
 As a bar owner, associated with your registered bar via a Google email, you can view your bar edit page (by clicking on 'Edit Your Bar').  This page allows you to edit your hours, message and daily deals that are shown to app users.  In addition, this page provides charts showing the overall choices made for each previous day of the week by app users for your bar.  This can be used to help guide happy hour deals to maximize profits.
