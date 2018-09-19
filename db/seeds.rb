@@ -1,8 +1,8 @@
 # Bars
-NAMES = ['Sisters Bar', "1DOWN", 'Oskar Greens', 'Truth Brewery', 'World of Freshcraft', 'Thirsty Lamb', 'Stan-Lee Beer House']
-ADDRESS = ['1920 Market Street, Denver, CO', '1925 Blake Street, Denver, CO', '1624 Market Street, Denver, CO', '7101 East Colfax Avenue, Denver, CO', '1530 Blake Street, Denver, CO', '1605 Wynkoop Street, Denver, CO', '2501 Dallas Street, Aurora, CO']
-LONGITUDE = ['-104.994192', '-104.994983', '-104.997508', '-104.905731', '-104.999540', '-105.0007', '-104.878220']
-LATITUDE = ['39.753057', '39.753782', '39.750111', '39.740381', '39.749920', '39.752753', '39.752620']
+NAMES = ['Sisters Bar', "1DOWN", 'Oskar Greens', 'Truth Brewery', 'World of Freshcraft', 'Thirsty Lamb', 'Stan-Lee Beer House', 'Standing Rock Tap House']
+ADDRESS = ['1920 Market St, Denver, CO', '1925 Blake St, Denver, CO', '1624 Market St, Denver, CO', '7101 East Colfax Ave, Denver, CO', '1530 Blake St, Denver, CO', '1605 Wynkoop St, Denver, CO', '2501 Dallas St, Aurora, CO', '1919 Blake St, Denver, CO']
+LONGITUDE = ['-104.994192', '-104.994983', '-104.997508', '-104.905731', '-104.999540', '-105.0007', '-104.878220', '-104.99541']
+LATITUDE = ['39.753057', '39.753782', '39.750111', '39.740381', '39.749920', '39.752753', '39.752620', '39.753878']
 OPEN = { Sunday: '8am', Monday: '10am', Tuesday: '10am', Wednesday: '10am', Thursday: '10am', Friday: '10am', Saturday: '8am' }
 CLOSE = { Sunday: '10pm', Monday: '12am', Tuesday: '12am', Wednesday: '12am', Thursday: '12am', Friday: '2am', Saturday: '2am' }
 HHSTART = { Sunday: '8am', Monday: '4pm', Tuesday: '4pm', Wednesday: '4pm', Thursday: '4pm', Friday: '4pm', Saturday: '4pm' }

@@ -12,7 +12,7 @@
     <meta name=viewport content='width=750'>
     <%= favicon_link_tag asset_path("favicon-clock.png"), :rel => 'icon', :type =>  'image/png' %>
     <% if current_page?(root_path) %>
-      <meta http-equiv="refresh" content="3;url=https://barhopbuddy.herokuapp.com/auth/google_oauth2" />
+      <meta http-equiv="refresh" content="3;url=http://localhost:3000/auth/google_oauth2" />
     <% end %>
   </head>
 
@@ -36,7 +36,7 @@
           </div>
         <% end %>
         <div class="five wide column right item flex-row-r">
-          <%= button_to 'Log Out', logout_path, class: "ui button logout", method: :delete %>
+          <%= button_to 'Log Out', logout_path, class: "ui button", id: "logout", method: :delete %>
           <% if bar_owner? && !current_page?(edit_bar_path(bar_owner?)) %>
             <%= button_to 'Edit Your Bar', edit_bar_path(bar_owner?), class: "ui button", method: :get %>
           <% end %>
