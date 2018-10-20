@@ -49,14 +49,15 @@ describe DealsPresenter do
       expect(presenter.current_address).to be_a(String)
       expect(presenter.current_address).to eq('2501 N Dallas St Aurora, Colorado')
     end
-    it 'can calculate which bars are near the user' do
-      long = -104.99835499999999
-      lat = 39.7527063
-      presenter = DealsPresenter.new(long, lat)
+    ## removed so that users outside of downtoen Denver can experience the app (deals page)
+    # it 'can calculate which bars are near the user' do
+    #   long = -104.99835499999999
+    #   lat = 39.7527063
+    #   presenter = DealsPresenter.new(long, lat)
 
-      expect(presenter.nearby_bars).to be_an(Array)
-      expect(presenter.nearby_bars).to_not include("Fiction Brewery")
-      expect(presenter.nearby_bars.count).to eq(5)
-    end
+    #   expect(presenter.nearby_bars).to be_an(Array)
+    #   expect(presenter.nearby_bars).to_not include("Fiction Brewery")
+    #   expect(presenter.nearby_bars.count).to eq(5)
+    # end
   end
 end
