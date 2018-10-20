@@ -12,7 +12,11 @@ class DealsPresenter
   def nearby_bars
     bars = Bar.all.order('random()')
     bars.map do |bar|
-      bar if distance_between(lat.to_f, long.to_f, bar.latitude.to_f, bar.longitude.to_f) < 2640
+      ## removed to show app work outside of downtown Denver
+      # bar if distance_between(lat.to_f, long.to_f, bar.latitude.to_f, bar.longitude.to_f) < 2640
+      
+      ## added to show app work outside of downtown Denver
+      bar
     end.compact
   end
 
