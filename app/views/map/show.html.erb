@@ -3,6 +3,7 @@
 </main>
 
 <script>
+  //really super cool that you got this working.
 	var locations = JSON.parse('<%= @presenter.locations.to_json %>'.replace(/&quot;/g, '"'));
 	mapboxgl.accessToken = "pk.eyJ1IjoianBseW5jaDM1IiwiYSI6ImNqbHIyczB1NjAwbDczcXMzN3Vra2RsNGwifQ.-BxRMCzfhhmbT8lA-qYqcQ";
 	const map = new mapboxgl.Map({

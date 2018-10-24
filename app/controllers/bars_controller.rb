@@ -10,6 +10,7 @@ class BarsController < ApplicationController
     if bar_params['message']
       @bar.message = bar_params['message']
     else
+      #maybe pull the next 5 into a private method, if for no other reason than to name it so people know what it does
       @bar.open[bar_params.values[0].keys.first.to_sym] = [bar_params.values[0].values.first]
       @bar.close[bar_params.values[1].keys.first.to_sym] = [bar_params.values[1].values.first]
       @bar.hh_start[bar_params.values[2].keys.first.to_sym] = [bar_params.values[2].values.first]
@@ -39,7 +40,7 @@ class BarsController < ApplicationController
 
   def new_hh_deals
     hh_keys.map do |deal|
-      bar_params[:deals][deal]      
+      bar_params[:deals][deal]
     end
   end
 end
