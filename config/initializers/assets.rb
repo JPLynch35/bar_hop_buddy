@@ -12,3 +12,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+Rails.application.config.assets.precompile += %w(app/assets/javascripts/bars.js.erb)
+Rails.application.config.assets.precompile += %w(app/assets/javascripts/deals.js.erb)
+Rails.application.config.assets.precompile += %w(app/assets/javascripts/map.js.erb)

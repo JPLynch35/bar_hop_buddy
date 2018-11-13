@@ -16,7 +16,7 @@
     <% end %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
     <% unless current_page?(root_path) %>
       <nav class="ui borderless menu grid">
         <div class="five wide column fitted item">

@@ -1,5 +1,4 @@
 class LocationController < ApplicationController
-  
   def create
     long = params[:long]
     lat = params[:lat]

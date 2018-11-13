@@ -1,5 +1,4 @@
 class UserBarsController < ApplicationController
-  
   def create
     current_user.user_bars.create(user_bar_params) unless logged_user_bar
     current_user.choices.create(click: true, bar_id: user_bar_params[:bar_id]) unless logged_choice_today
@@ -12,6 +11,7 @@ class UserBarsController < ApplicationController
   end
 
   private
+
   def user_bar_params
     params.require(:user_bar).permit(:bar_id)
   end

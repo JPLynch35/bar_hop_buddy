@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require semantic-ui
 //= require Chart.min
+//= require jquery-readyselector.js
 //= require_tree .
