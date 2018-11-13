@@ -1,5 +1,4 @@
 class BarsController < ApplicationController
-
   def edit
     render file: "/public/404" unless bar_owner?.id == params[:id].to_i
     @presenter = BarPresenter.new(bar_owner?)
@@ -10,11 +9,7 @@ class BarsController < ApplicationController
     if bar_params['message']
       @bar.message = bar_params['message']
     else
-      @bar.open[bar_params.values[0].keys.first.to_sym] = [bar_params.values[0].values.first]
-      @bar.close[bar_params.values[1].keys.first.to_sym] = [bar_params.values[1].values.first]
-      @bar.hh_start[bar_params.values[2].keys.first.to_sym] = [bar_params.values[2].values.first]
-      @bar.hh_end[bar_params.values[3].keys.first.to_sym] = [bar_params.values[3].values.first]
-      @bar.deals[bar_params.values[0].keys.first] = new_hh_deals
+      edit_bar_deals
     end
     if @bar.save
       flash[:successs] = @bar.name + " successfully updated."
@@ -41,5 +36,13 @@ class BarsController < ApplicationController
     hh_keys.map do |deal|
       bar_params[:deals][deal]      
     end
+  end
+
+  def edit_bar_deals
+    @bar.open[bar_params.values[0].keys.first.to_sym] = [bar_params.values[0].values.first]
+    @bar.close[bar_params.values[1].keys.first.to_sym] = [bar_params.values[1].values.first]
+    @bar.hh_start[bar_params.values[2].keys.first.to_sym] = [bar_params.values[2].values.first]
+    @bar.hh_end[bar_params.values[3].keys.first.to_sym] = [bar_params.values[3].values.first]
+    @bar.deals[bar_params.values[0].keys.first] = new_hh_deals
   end
 end
